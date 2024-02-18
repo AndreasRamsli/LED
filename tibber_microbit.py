@@ -4,6 +4,7 @@ from tibber import Tibber, gql_queries
 import serial
 from dateutil import parser
 import logging
+import json
 
 # Set up logging
 logging.basicConfig(filename='tibber_microbit.log', level=logging.INFO, format='%(asctime)s %(message)s')
@@ -42,13 +43,24 @@ class PriceCache:
     def update_cache(self, price_info):
         today_prices = price_info['viewer']['home']['currentSubscription']['priceInfo']['today']
         tomorrow_prices = price_info['viewer']['home']['currentSubscription']['priceInfo']['tomorrow']
-        logging.info(f'New price info in cache for today: {today_prices},  tomorrow: {tomorrow_prices}')
-        for entry in today_prices:
-            hour = parser.isoparse(entry['startsAt']).hour
-            self.cache['today'][str(hour)] = entry
-        for entry in tomorrow_prices:
-            hour = parser.isoparse(entry['startsAt']).hour
-            self.cache['tomorrow'][str(hour)] = entry
+
+        new_today_json = json.dumps(today_prices, sort_keys=True)
+        new_tomorrow_json = json.dumps(tomorrow_prices, sort_keys=True)
+        existing_today_json = json.dumps([self.cache['today'][hour] for hour in sorted(self.cache['today'])], sort_keys=True)
+        existing_tomorrow_json = json.dumps([self.cache['tomorrow'][hour] for hour in sorted(self.cache['tomorrow'])], sort_keys=True)
+
+        # Check if there are any changes in the prices for today or tomorrow
+        if new_today_json != existing_today_json:
+            logging.info('Updating cache with new today prices.')
+            for entry in today_prices:
+                hour = parser.isoparse(entry['startsAt']).hour
+                self.cache['today'][str(hour)] = entry
+
+        if new_tomorrow_json != existing_tomorrow_json:
+            logging.info('Updating cache with new tomorrow prices.')
+            for entry in tomorrow_prices:
+                hour = parser.isoparse(entry['startsAt']).hour
+                self.cache['tomorrow'][str(hour)] = entry
 
     def get_current_price_info(self):
         now = datetime.now(timezone.utc).astimezone()
