@@ -61,6 +61,8 @@ class PriceCache:
             for entry in tomorrow_prices:
                 hour = parser.isoparse(entry['startsAt']).hour
                 self.cache['tomorrow'][str(hour)] = entry
+        else:
+            logging.info('No new price info for cache')
 
     def get_current_price_info(self):
         now = datetime.now(timezone.utc).astimezone()
@@ -75,41 +77,46 @@ class PriceCache:
             return entry['level'], parser.isoparse(entry['startsAt']).strftime('%H:%M'), entry['total']
         return 'Unknown', '00:00', 0.0
 
-async def hourly_update(tibber_connection, cache, home_id, microbit_communicator):
+async def hourly_update(cache, microbit_communicator):
     while True:
         price_level, startsAt, total = cache.get_current_price_info()
         microbit_communicator.send_to_microbit(price_level, startsAt, total)
 
         now = datetime.now(timezone.utc).astimezone()
         next_hour = (now.replace(minute=0, second=0, microsecond=0) + timedelta(hours=1))
-        delay_seconds = max((next_hour - now).total_seconds(),5) #minimum delay of 5 seconds
-        logging.info(f"Waiting for next hourly price update in {round(delay_seconds)} seconds.")
+        delay_seconds = max((next_hour - now).total_seconds(), 5)
+        next_update_time = now + timedelta(seconds=delay_seconds)
+        delay_hms = str(timedelta(seconds=int(delay_seconds)))
+        
+        logging.info(f"Next hourly price update in {delay_hms} (hh:mm:ss), at {next_update_time.strftime('%Y-%m-%d %H:%M:%S')}")
+
         await asyncio.sleep(delay_seconds)
 
 
 async def fetch_prices_daily(tibber_connection, cache, home_id):
+    initial_fetch_done = False
     while True:
         now = datetime.now(timezone.utc).astimezone()
         
-        await fetch_prices(tibber_connection, cache, home_id)
+        if not initial_fetch_done:
+            await fetch_prices(tibber_connection, cache, home_id)
+            initial_fetch_done = True
 
         if '0' not in cache.cache['tomorrow']:
             first_attempt_time = now.replace(hour=18, minute=0, second=0, microsecond=0)
             if now < first_attempt_time:
                 wait_seconds_until_first_attempt = (first_attempt_time - now).total_seconds()
-                logging.info(f"Waiting until 18:00 for the first attempt to fetch tomorrow's data in {round(wait_seconds_until_first_attempt)} seconds.")
+                logging.info(f"Waiting until 18:00 for the first attempt to fetch tomorrow's data in {str(timedelta(seconds=int(wait_seconds_until_first_attempt)))} (hh:mm:ss), at {first_attempt_time.strftime('%Y-%m-%d %H:%M:%S')}")
                 await asyncio.sleep(wait_seconds_until_first_attempt)
-            
+
             while '0' not in cache.cache['tomorrow']:
                 await fetch_prices(tibber_connection, cache, home_id)
                 await asyncio.sleep(3600)
-
-        next_fetch_time = (datetime.now(timezone.utc).astimezone() + timedelta(days=1)).replace(hour=14, minute=0, second=0, microsecond=0)
-        wait_seconds = (next_fetch_time - datetime.now(timezone.utc).astimezone()).total_seconds()
-        logging.info(f"Waiting for next daily price update in {round(wait_seconds)} seconds.")
-        await asyncio.sleep(wait_seconds)
-
-
+        else:
+            next_fetch_time = now + timedelta(days=1)
+            wait_seconds = (next_fetch_time - now).total_seconds()
+            logging.info(f"Waiting for next daily price update in {str(timedelta(seconds=int(wait_seconds)))} (hh:mm:ss), at {next_fetch_time.strftime('%Y-%m-%d %H:%M:%S')}")
+            await asyncio.sleep(wait_seconds)
 
 async def fetch_prices(tibber_connection, cache, home_id):
     query = gql_queries.PRICE_INFO % home_id
@@ -122,8 +129,7 @@ async def fetch_prices(tibber_connection, cache, home_id):
 
 async def daily_updates(tibber_connection, cache, home_id, microbit_communicator):
     asyncio.create_task(fetch_prices_daily(tibber_connection, cache, home_id))
-    await fetch_prices(tibber_connection, cache, home_id)
-    await hourly_update(tibber_connection, cache, home_id, microbit_communicator)
+    await hourly_update(cache, microbit_communicator)
 
 async def main():
     TOKEN = "U4L8yS_OHsfgKndAhNQZ8K-JYElbNUagYvToCF3ZPVE"
