@@ -1,0 +1,134 @@
+import asyncio
+from datetime import datetime, timedelta, timezone
+from tibber import Tibber, gql_queries
+import serial
+from dateutil import parser
+import logging
+
+# Set up logging
+logging.basicConfig(filename='tibber_microbit.log', level=logging.INFO, format='%(asctime)s %(message)s')
+
+class MicroBitCommunicator:
+    port = '/dev/ttyACM0' # or '/dev/cu.usbmodem11102' for macOS
+    def __init__(self, port=port, baudrate=115200):
+        self.port = port
+        self.baudrate = baudrate
+        self.serial_conn = None
+
+    def connect(self):
+        try:
+            self.serial_conn = serial.Serial(self.port, self.baudrate)
+            logging.info("Connected to micro:bit on Raspberry Pi")
+        except Exception as e:
+            logging.error(f"Failed to connect to micro:bit on {self.port}: {e}")
+
+    def send_to_microbit(self, message, startsAt, total):
+        full_message = f"{message},{startsAt},{round(total,2)}\n"
+        try:
+            self.serial_conn.write(full_message.encode('utf-8'))
+            logging.info(f"Sent to micro:bit: {full_message}")
+        except Exception as e:
+            logging.error(f"Failed to send to micro:bit: {e}")
+
+    def disconnect(self):
+        if self.serial_conn:
+            self.serial_conn.close()
+            logging.info("Disconnected from micro:bit")
+
+class PriceCache:
+    def __init__(self):
+        self.cache = {'today': {}, 'tomorrow': {}}
+
+    def update_cache(self, price_info):
+        today_prices = price_info['viewer']['home']['currentSubscription']['priceInfo']['today']
+        tomorrow_prices = price_info['viewer']['home']['currentSubscription']['priceInfo']['tomorrow']
+        logging.info(f'New price info in cache for today: {today_prices},  tomorrow: {tomorrow_prices}')
+        for entry in today_prices:
+            hour = parser.isoparse(entry['startsAt']).hour
+            self.cache['today'][str(hour)] = entry
+        for entry in tomorrow_prices:
+            hour = parser.isoparse(entry['startsAt']).hour
+            self.cache['tomorrow'][str(hour)] = entry
+
+    def get_current_price_info(self):
+        now = datetime.now(timezone.utc).astimezone()
+        current_hour = str(now.hour)
+
+        day = 'today'
+        if any(datetime.strptime(entry['startsAt'], '%Y-%m-%dT%H:%M:%S.%f%z').date() > now.date() for entry in self.cache['today'].values()):
+            day = 'tomorrow'
+
+        if current_hour in self.cache[day]:
+            entry = self.cache[day][current_hour]
+            return entry['level'], parser.isoparse(entry['startsAt']).strftime('%H:%M'), entry['total']
+        return 'Unknown', '00:00', 0.0
+
+async def hourly_update(tibber_connection, cache, home_id, microbit_communicator):
+    while True:
+        price_level, startsAt, total = cache.get_current_price_info()
+        microbit_communicator.send_to_microbit(price_level, startsAt, total)
+
+        now = datetime.now(timezone.utc).astimezone()
+        next_hour = (now.replace(minute=0, second=0, microsecond=0) + timedelta(hours=1))
+        delay_seconds = max((next_hour - now).total_seconds(),5) #minimum delay of 5 seconds
+        logging.info(f"Waiting for next hourly price update in {round(delay_seconds)} seconds.")
+        await asyncio.sleep(delay_seconds)
+
+
+async def fetch_prices_daily(tibber_connection, cache, home_id):
+    while True:
+        now = datetime.now(timezone.utc).astimezone()
+        
+        await fetch_prices(tibber_connection, cache, home_id)
+
+        if '0' not in cache.cache['tomorrow']:
+            first_attempt_time = now.replace(hour=18, minute=0, second=0, microsecond=0)
+            if now < first_attempt_time:
+                wait_seconds_until_first_attempt = (first_attempt_time - now).total_seconds()
+                logging.info(f"Waiting until 18:00 for the first attempt to fetch tomorrow's data in {round(wait_seconds_until_first_attempt)} seconds.")
+                await asyncio.sleep(wait_seconds_until_first_attempt)
+            
+            while '0' not in cache.cache['tomorrow']:
+                await fetch_prices(tibber_connection, cache, home_id)
+                await asyncio.sleep(3600)
+
+        next_fetch_time = (datetime.now(timezone.utc).astimezone() + timedelta(days=1)).replace(hour=14, minute=0, second=0, microsecond=0)
+        wait_seconds = (next_fetch_time - datetime.now(timezone.utc).astimezone()).total_seconds()
+        logging.info(f"Waiting for next daily price update in {round(wait_seconds)} seconds.")
+        await asyncio.sleep(wait_seconds)
+
+
+
+async def fetch_prices(tibber_connection, cache, home_id):
+    query = gql_queries.PRICE_INFO % home_id
+    data = await tibber_connection.execute(query)
+    if data:
+        cache.update_cache(data)
+        logging.info("Cache updated with new price information.")
+    else:
+        logging.info("No data returned from the API.")
+
+async def daily_updates(tibber_connection, cache, home_id, microbit_communicator):
+    asyncio.create_task(fetch_prices_daily(tibber_connection, cache, home_id))
+    await fetch_prices(tibber_connection, cache, home_id)
+    await hourly_update(tibber_connection, cache, home_id, microbit_communicator)
+
+async def main():
+    TOKEN = "U4L8yS_OHsfgKndAhNQZ8K-JYElbNUagYvToCF3ZPVE"
+    USER_AGENT = "LED_client"
+    HOME_ID = "975996b6-e7ca-4fbf-9f72-61e2df95bc0c"
+
+    tibber_connection = Tibber(access_token=TOKEN, user_agent=USER_AGENT)
+    await tibber_connection.update_info()
+    
+    cache = PriceCache()
+    microbit_communicator = MicroBitCommunicator()
+    microbit_communicator.connect()
+
+    await daily_updates(tibber_connection, cache, HOME_ID, microbit_communicator)
+
+    await tibber_connection.close_connection()
+    microbit_communicator.disconnect()
+
+if __name__ == "__main__":
+    asyncio.run(main())
