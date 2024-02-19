@@ -6,7 +6,8 @@ from dateutil import parser
 import logging
 import json
 
-#TODO: Log if the connection to the micro:bit is lost.
+#TODO:
+#
 logging.basicConfig(filename='tibber_microbit.log', level=logging.INFO, format='%(asctime)s %(message)s')
 
 class MicroBitCommunicator:
@@ -95,17 +96,17 @@ async def fetch_prices_daily(tibber_connection, cache, home_id, microbit_communi
     initial_fetch_done = False
     while True:
         now = datetime.now(timezone.utc).astimezone()
-        
-        if initial_fetch_done == False:
-            data_fetched = await fetch_prices(tibber_connection, cache, home_id)
-            if data_fetched:
-                await hourly_update(cache, microbit_communicator, immediate=True)
+
+        if not initial_fetch_done:
+            await fetch_prices(tibber_connection, cache, home_id)
+            asyncio.create_task(hourly_update(cache, microbit_communicator))
             initial_fetch_done = True
 
         if '0' not in cache.cache['tomorrow']:
             await attempt_fetch_tomorrow_prices(tibber_connection, cache, home_id, now, microbit_communicator)
-        
+    
         await schedule_next_daily_fetch(now)
+
 
 
 async def fetch_prices(tibber_connection, cache, home_id):
@@ -114,43 +115,51 @@ async def fetch_prices(tibber_connection, cache, home_id):
     if data:
         cache.update_cache(data)
         logging.info("Data returned from API.")
-        return True  # Indicate successful data fetch
+        return True
     else:
         logging.info("No data returned from the API.")
-        return False  # Indicate failure to fetch data
+        return False
 
 
 
-async def hourly_update(cache, microbit_communicator, immediate=False):
-    if immediate:
+async def hourly_update(cache, microbit_communicator):
+    while True:
         send_update_to_microbit(cache, microbit_communicator)
-    else:
-        while True:
-            send_update_to_microbit(cache, microbit_communicator)
 
-            now = datetime.now(timezone.utc).astimezone()
-            next_hour = (now.replace(minute=0, second=0, microsecond=0) + timedelta(hours=1))
-            await asyncio.sleep((next_hour - now).total_seconds())
+        now = datetime.now(timezone.utc).astimezone()
+        next_hour = now.replace(minute=0, second=0, microsecond=0) + timedelta(hours=1)
+        wait_seconds = (next_hour - now).total_seconds()
+
+        logging.info(f"Next hourly update in {str(timedelta(seconds=int(wait_seconds)))}, at {next_hour.strftime('%Y-%m-%d %H:%M:%S')}")
+        await asyncio.sleep(wait_seconds)
+
+            
 
 async def attempt_fetch_tomorrow_prices(tibber_connection, cache, home_id, now, microbit_communicator):
-    first_attempt_time = now.replace(hour=18, minute=0, second=0, microsecond=0)
-    if now < first_attempt_time:
-        wait_seconds_until_first_attempt = (first_attempt_time - now).total_seconds()
+    first_attempt_time = now.replace(hour=18, minute=0, second=0, microsecond=0) if now.hour < 18 else now
+    
+    wait_seconds_until_first_attempt = max((first_attempt_time - now).total_seconds(), 0)
+    if wait_seconds_until_first_attempt > 0:
         logging.info(f"Waiting until 18:00 for the first attempt to fetch tomorrow's data in {str(timedelta(seconds=int(wait_seconds_until_first_attempt)))} (hh:mm:ss), at {first_attempt_time.strftime('%Y-%m-%d %H:%M:%S')}")
         await asyncio.sleep(wait_seconds_until_first_attempt)
     
     while '0' not in cache.cache['tomorrow']:
         data_fetched = await fetch_prices(tibber_connection, cache, home_id)
         if data_fetched:
-            await hourly_update(cache, microbit_communicator, immediate=True)
+            send_update_to_microbit(cache, microbit_communicator)
         await asyncio.sleep(3600)
+
+    await schedule_next_daily_fetch(now)
+
 
 
 async def schedule_next_daily_fetch(now):
-    next_fetch_time = now + timedelta(days=1)
+    # Schedule next fetch for 18:00 the next day
+    next_fetch_time = (now + timedelta(days=1)).replace(hour=18, minute=0, second=0, microsecond=0)
     wait_seconds = (next_fetch_time - now).total_seconds()
     logging.info(f"Waiting for next daily price update in {str(timedelta(seconds=int(wait_seconds)))} (hh:mm:ss), at {next_fetch_time.strftime('%Y-%m-%d %H:%M:%S')}")
     await asyncio.sleep(wait_seconds)
+
 
 
 async def main():

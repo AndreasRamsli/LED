@@ -1,8 +1,17 @@
-2024-02-18 21:33:57,319 Connected to micro:bit on macOS
-2024-02-18 21:33:57,392 Updating cache with new today prices.
-2024-02-18 21:33:57,393 Updating cache with new tomorrow prices.
-2024-02-18 21:33:57,394 Data returned from API.
-2024-02-18 21:33:57,399 Price Level: NORMAL, Starts At: 21:00, Total: 0.8902
-2024-02-18 21:33:57,399 Sent to micro:bit: NORMAL,21:00,0.89
+2024-02-19 14:53:21,194 Connected to micro:bit on macOS
+2024-02-19 14:53:21,286 Updating cache with new today prices.
+2024-02-19 14:53:21,287 Updating cache with new tomorrow prices.
+2024-02-19 14:53:21,288 Data returned from API.
+2024-02-19 14:53:21,288 Waiting for next daily price update in 1 day, 3:06:38 (hh:mm:ss), at 2024-02-20 18:00:00
+2024-02-19 14:53:21,294 Price Level: NORMAL, Starts At: 14:00, Total: 0.9479
+2024-02-19 14:53:21,294 Sent to micro:bit: NORMAL,14:00,0.95
 
-2024-02-18 21:33:57,399 Waiting for next daily price update in 1 day, 0:00:00 (hh:mm:ss), at 2024-02-19 21:33:57
+2024-02-19 14:53:21,294 Next hourly update in 0:06:38, at 2024-02-19 15:00:00
+2024-02-19 14:59:59,991 Price Level: NORMAL, Starts At: 14:00, Total: 0.9479
+2024-02-19 14:59:59,994 Sent to micro:bit: NORMAL,14:00,0.95
+
+2024-02-19 14:59:59,994 Next hourly update in 0:00:00, at 2024-02-19 15:00:00
+2024-02-19 15:00:00,005 Price Level: NORMAL, Starts At: 15:00, Total: 0.9868
+2024-02-19 15:00:00,005 Sent to micro:bit: NORMAL,15:00,0.99
+
+2024-02-19 15:00:00,005 Next hourly update in 0:59:59, at 2024-02-19 16:00:00
