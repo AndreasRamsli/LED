@@ -15,3 +15,77 @@
 2024-02-19 15:00:00,005 Sent to micro:bit: NORMAL,15:00,0.99
 
 2024-02-19 15:00:00,005 Next hourly update in 0:59:59, at 2024-02-19 16:00:00
+2024-02-19 16:02:29,873 Price Level: EXPENSIVE, Starts At: 16:00, Total: 1.0287
+2024-02-19 16:02:29,875 Failed to send to micro:bit: write failed: [Errno 6] Device not configured 
+
+#mac off ... 
+#TODO: implement retry function if failure like above
+
+
+2024-02-19 16:02:29,875 Next hourly update in 0:57:30, at 2024-02-19 17:00:00
+2024-02-19 16:45:57,432 Unclosed client session
+client_session: <aiohttp.client.ClientSession object at 0x1022fed80>
+2024-02-19 16:46:12,995 Connected to micro:bit on macOS
+2024-02-19 16:46:13,314 Updating cache with new today prices.
+2024-02-19 16:46:13,315 Updating cache with new tomorrow prices.
+2024-02-19 16:46:13,316 Data returned from API.
+2024-02-19 16:46:13,316 Waiting for next daily price update in 1 day, 1:13:47 (hh:mm:ss), at 2024-02-20 18:00:00
+2024-02-19 16:46:13,320 Price Level: EXPENSIVE, Starts At: 16:00, Total: 1.0287
+2024-02-19 16:46:13,320 Sent to micro:bit: EXPENSIVE,16:00,1.03
+
+2024-02-19 16:46:13,321 Next hourly update in 0:13:46, at 2024-02-19 17:00:00
+2024-02-19 16:48:02,583 Unclosed client session
+client_session: <aiohttp.client.ClientSession object at 0x1023642f0>
+2024-02-19 17:23:47,093 Error connecting to Tibber
+Traceback (most recent call last):
+  File "/Users/andreas/miniconda3/envs/pyTibber/lib/python3.12/site-packages/aiohttp/connector.py", line 1173, in _create_direct_connection
+    hosts = await asyncio.shield(host_resolved)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/andreas/miniconda3/envs/pyTibber/lib/python3.12/site-packages/aiohttp/connector.py", line 884, in _resolve_host
+    addrs = await self._resolver.resolve(host, port, family=self._family)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/andreas/miniconda3/envs/pyTibber/lib/python3.12/site-packages/aiohttp/resolver.py", line 33, in resolve
+    infos = await self._loop.getaddrinfo(
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/andreas/miniconda3/envs/pyTibber/lib/python3.12/asyncio/base_events.py", line 898, in getaddrinfo
+    return await self.run_in_executor(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/andreas/miniconda3/envs/pyTibber/lib/python3.12/concurrent/futures/thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/andreas/miniconda3/envs/pyTibber/lib/python3.12/socket.py", line 963, in getaddrinfo
+    for res in _socket.getaddrinfo(host, port, family, type, proto, flags):
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+socket.gaierror: [Errno 8] nodename nor servname provided, or not known
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/andreas/miniconda3/envs/pyTibber/lib/python3.12/site-packages/tibber/__init__.py", line 102, in execute
+    resp = await self.websession.post(API_ENDPOINT, **post_args, timeout=self.timeout)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/andreas/miniconda3/envs/pyTibber/lib/python3.12/site-packages/aiohttp/client.py", line 574, in _request
+    conn = await self._connector.connect(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/andreas/miniconda3/envs/pyTibber/lib/python3.12/site-packages/aiohttp/connector.py", line 544, in connect
+    proto = await self._create_connection(req, traces, timeout)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/andreas/miniconda3/envs/pyTibber/lib/python3.12/site-packages/aiohttp/connector.py", line 911, in _create_connection
+    _, proto = await self._create_direct_connection(req, traces, timeout)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/andreas/miniconda3/envs/pyTibber/lib/python3.12/site-packages/aiohttp/connector.py", line 1187, in _create_direct_connection
+    raise ClientConnectorError(req.connection_key, exc) from exc
+aiohttp.client_exceptions.ClientConnectorError: Cannot connect to host api.tibber.com:443 ssl:default [nodename nor servname provided, or not known]
+2024-02-19 17:23:47,109 Unclosed client session
+client_session: <aiohttp.client.ClientSession object at 0x106963d70>
+2024-02-19 17:24:22,456 Connected to micro:bit on macOS
+2024-02-19 17:24:22,545 Updating cache with new today prices.
+2024-02-19 17:24:22,546 Updating cache with new tomorrow prices.
+2024-02-19 17:24:22,546 Data returned from API.
+2024-02-19 17:24:22,547 Waiting for next daily price update in 1 day, 0:35:37 (hh:mm:ss), at 2024-02-20 18:00:00
+2024-02-19 17:24:22,551 Price Level: EXPENSIVE, Starts At: 17:00, Total: 1.1215
+2024-02-19 17:24:22,551 Sent to micro:bit: EXPENSIVE,17:00,1.12
+
+2024-02-19 17:24:22,551 Next hourly update in 0:35:37, at 2024-02-19 18:00:00
+2024-02-19 19:22:08,074 Unclosed client session
+client_session: <aiohttp.client.ClientSession object at 0x104306d80>
