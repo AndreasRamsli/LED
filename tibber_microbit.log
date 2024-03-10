@@ -89,3 +89,558 @@ client_session: <aiohttp.client.ClientSession object at 0x106963d70>
 2024-02-19 17:24:22,551 Next hourly update in 0:35:37, at 2024-02-19 18:00:00
 2024-02-19 19:22:08,074 Unclosed client session
 client_session: <aiohttp.client.ClientSession object at 0x104306d80>
+2024-03-05 08:26:07,214 Failed to connect to micro:bit on /dev/ttyACM0: [Errno 2] could not open port /dev/ttyACM0: [Errno 2] No such file or directory: '/dev/ttyACM0'
+2024-03-05 08:26:07,280 Updating cache with new today prices.
+2024-03-05 08:26:07,281 No new price info for cache
+2024-03-05 08:26:07,281 Data returned from API.
+2024-03-05 08:26:07,282 Waiting until 18:00 for the first attempt to fetch tomorrow's data in 9:33:52 (hh:mm:ss), at 2024-03-05 18:00:00
+2024-03-05 08:26:07,289 Price Level: NORMAL, Starts At: 08:00, Total: 0.9478
+2024-03-05 08:26:07,289 Failed to send to micro:bit: 'NoneType' object has no attribute 'write'
+2024-03-05 08:26:07,290 Next hourly update in 0:33:52, at 2024-03-05 09:00:00
+2024-03-05 08:26:14,868 Unclosed client session
+client_session: <aiohttp.client.ClientSession object at 0x7f8dda9210>
+2024-03-05 08:26:14,868 Unclosed connector
+connections: ['[(<aiohttp.client_proto.ResponseHandler object at 0x7f8dda0600>, 244.177263714)]']
+connector: <aiohttp.connector.TCPConnector object at 0x7f8dda9250>
+2024-03-05 08:28:24,689 Connected to micro:bit on RPi
+2024-03-05 08:28:24,762 Updating cache with new today prices.
+2024-03-05 08:28:24,764 No new price info for cache
+2024-03-05 08:28:24,764 Data returned from API.
+2024-03-05 08:28:24,764 Waiting until 18:00 for the first attempt to fetch tomorrow's data in 9:31:35 (hh:mm:ss), at 2024-03-05 18:00:00
+2024-03-05 08:28:24,770 Price Level: NORMAL, Starts At: 08:00, Total: 0.9478
+2024-03-05 08:28:24,771 Sent to micro:bit: NORMAL,08:00,0.95
+
+2024-03-05 08:28:24,771 Next hourly update in 0:31:35, at 2024-03-05 09:00:00
+2024-03-05 09:00:00,105 Price Level: NORMAL, Starts At: 09:00, Total: 0.925
+2024-03-05 09:00:00,106 Sent to micro:bit: NORMAL,09:00,0.93
+
+2024-03-05 09:00:00,106 Next hourly update in 0:59:59, at 2024-03-05 10:00:00
+2024-03-05 10:00:00,105 Price Level: NORMAL, Starts At: 10:00, Total: 0.9184
+2024-03-05 10:00:00,105 Sent to micro:bit: NORMAL,10:00,0.92
+
+2024-03-05 10:00:00,106 Next hourly update in 0:59:59, at 2024-03-05 11:00:00
+2024-03-05 11:00:00,104 Price Level: NORMAL, Starts At: 11:00, Total: 0.919
+2024-03-05 11:00:00,105 Sent to micro:bit: NORMAL,11:00,0.92
+
+2024-03-05 11:00:00,106 Next hourly update in 0:59:59, at 2024-03-05 12:00:00
+2024-03-05 12:00:00,104 Price Level: NORMAL, Starts At: 12:00, Total: 0.9102
+2024-03-05 12:00:00,105 Sent to micro:bit: NORMAL,12:00,0.91
+
+2024-03-05 12:00:00,106 Next hourly update in 0:59:59, at 2024-03-05 13:00:00
+2024-03-05 13:00:00,105 Price Level: NORMAL, Starts At: 13:00, Total: 0.91
+2024-03-05 13:00:00,106 Sent to micro:bit: NORMAL,13:00,0.91
+
+2024-03-05 13:00:00,106 Next hourly update in 0:59:59, at 2024-03-05 14:00:00
+2024-03-05 14:00:00,105 Price Level: NORMAL, Starts At: 14:00, Total: 0.9167
+2024-03-05 14:00:00,106 Sent to micro:bit: NORMAL,14:00,0.92
+
+2024-03-05 14:00:00,106 Next hourly update in 0:59:59, at 2024-03-05 15:00:00
+2024-03-05 15:00:00,048 Price Level: NORMAL, Starts At: 15:00, Total: 0.9251
+2024-03-05 15:00:00,050 Sent to micro:bit: NORMAL,15:00,0.93
+
+2024-03-05 15:00:00,051 Next hourly update in 0:59:59, at 2024-03-05 16:00:00
+2024-03-05 16:00:00,104 Price Level: NORMAL, Starts At: 16:00, Total: 0.94
+2024-03-05 16:00:00,105 Sent to micro:bit: NORMAL,16:00,0.94
+
+2024-03-05 16:00:00,105 Next hourly update in 0:59:59, at 2024-03-05 17:00:00
+2024-03-05 17:00:00,105 Price Level: EXPENSIVE, Starts At: 17:00, Total: 1.1283
+2024-03-05 17:00:00,106 Sent to micro:bit: EXPENSIVE,17:00,1.13
+
+2024-03-05 17:00:00,106 Next hourly update in 0:59:59, at 2024-03-05 18:00:00
+2024-03-05 18:00:00,105 Price Level: VERY_EXPENSIVE, Starts At: 18:00, Total: 1.4409
+2024-03-05 18:00:00,105 Sent to micro:bit: VERY_EXPENSIVE,18:00,1.44
+
+2024-03-05 18:00:00,106 Next hourly update in 0:59:59, at 2024-03-05 19:00:00
+2024-03-05 18:00:01,635 Updating cache with new today prices.
+2024-03-05 18:00:01,639 Updating cache with new tomorrow prices.
+2024-03-05 18:00:01,642 Data returned from API.
+2024-03-05 18:00:01,645 Price Level: VERY_EXPENSIVE, Starts At: 18:00, Total: 1.4409
+2024-03-05 18:00:01,646 Sent to micro:bit: VERY_EXPENSIVE,18:00,1.44
+
+2024-03-05 19:00:00,050 Price Level: EXPENSIVE, Starts At: 19:00, Total: 1.1985
+2024-03-05 19:00:00,051 Sent to micro:bit: EXPENSIVE,19:00,1.2
+
+2024-03-05 19:00:00,051 Next hourly update in 0:59:59, at 2024-03-05 20:00:00
+2024-03-05 19:00:01,649 Waiting for next daily price update in 1 day, 9:31:35 (hh:mm:ss), at 2024-03-06 18:00:00
+2024-03-05 20:00:00,104 Price Level: NORMAL, Starts At: 20:00, Total: 1.0427
+2024-03-05 20:00:00,105 Sent to micro:bit: NORMAL,20:00,1.04
+
+2024-03-05 20:00:00,105 Next hourly update in 0:59:59, at 2024-03-05 21:00:00
+2024-03-05 21:00:00,105 Price Level: NORMAL, Starts At: 21:00, Total: 0.9835
+2024-03-05 21:00:00,106 Sent to micro:bit: NORMAL,21:00,0.98
+
+2024-03-05 21:00:00,106 Next hourly update in 0:59:59, at 2024-03-05 22:00:00
+2024-03-05 22:00:00,048 Price Level: NORMAL, Starts At: 22:00, Total: 0.9584
+2024-03-05 22:00:00,049 Sent to micro:bit: NORMAL,22:00,0.96
+
+2024-03-05 22:00:00,049 Next hourly update in 0:59:59, at 2024-03-05 23:00:00
+2024-03-05 23:00:00,050 Price Level: NORMAL, Starts At: 23:00, Total: 0.9414
+2024-03-05 23:00:00,051 Sent to micro:bit: NORMAL,23:00,0.94
+
+2024-03-05 23:00:00,051 Next hourly update in 0:59:59, at 2024-03-06 00:00:00
+2024-03-06 00:00:00,104 Price Level: NORMAL, Starts At: 00:00, Total: 0.8759
+2024-03-06 00:00:00,105 Sent to micro:bit: NORMAL,00:00,0.88
+
+2024-03-06 00:00:00,106 Next hourly update in 0:59:59, at 2024-03-06 01:00:00
+2024-03-06 01:00:00,048 Price Level: NORMAL, Starts At: 01:00, Total: 0.8798
+2024-03-06 01:00:00,048 Sent to micro:bit: NORMAL,01:00,0.88
+
+2024-03-06 01:00:00,049 Next hourly update in 0:59:59, at 2024-03-06 02:00:00
+2024-03-06 02:00:00,105 Price Level: NORMAL, Starts At: 02:00, Total: 0.8795
+2024-03-06 02:00:00,105 Sent to micro:bit: NORMAL,02:00,0.88
+
+2024-03-06 02:00:00,106 Next hourly update in 0:59:59, at 2024-03-06 03:00:00
+2024-03-06 03:00:00,104 Price Level: NORMAL, Starts At: 03:00, Total: 0.8781
+2024-03-06 03:00:00,105 Sent to micro:bit: NORMAL,03:00,0.88
+
+2024-03-06 03:00:00,105 Next hourly update in 0:59:59, at 2024-03-06 04:00:00
+2024-03-06 04:00:00,048 Price Level: NORMAL, Starts At: 04:00, Total: 0.8796
+2024-03-06 04:00:00,048 Sent to micro:bit: NORMAL,04:00,0.88
+
+2024-03-06 04:00:00,049 Next hourly update in 0:59:59, at 2024-03-06 05:00:00
+2024-03-06 05:00:00,047 Price Level: NORMAL, Starts At: 05:00, Total: 0.8928
+2024-03-06 05:00:00,048 Sent to micro:bit: NORMAL,05:00,0.89
+
+2024-03-06 05:00:00,049 Next hourly update in 0:59:59, at 2024-03-06 06:00:00
+2024-03-06 06:00:00,048 Price Level: NORMAL, Starts At: 06:00, Total: 0.907
+2024-03-06 06:00:00,049 Sent to micro:bit: NORMAL,06:00,0.91
+
+2024-03-06 06:00:00,049 Next hourly update in 0:59:59, at 2024-03-06 07:00:00
+2024-03-06 07:00:00,048 Price Level: NORMAL, Starts At: 07:00, Total: 0.9344
+2024-03-06 07:00:00,050 Sent to micro:bit: NORMAL,07:00,0.93
+
+2024-03-06 07:00:00,051 Next hourly update in 0:59:59, at 2024-03-06 08:00:00
+2024-03-06 08:00:00,048 Price Level: NORMAL, Starts At: 08:00, Total: 0.9478
+2024-03-06 08:00:00,049 Sent to micro:bit: NORMAL,08:00,0.95
+
+2024-03-06 08:00:00,049 Next hourly update in 0:59:59, at 2024-03-06 09:00:00
+2024-03-06 09:00:00,065 Price Level: NORMAL, Starts At: 09:00, Total: 0.925
+2024-03-06 09:00:00,066 Sent to micro:bit: NORMAL,09:00,0.93
+
+2024-03-06 09:00:00,067 Next hourly update in 0:59:59, at 2024-03-06 10:00:00
+2024-03-06 10:00:00,105 Price Level: NORMAL, Starts At: 10:00, Total: 0.9184
+2024-03-06 10:00:00,106 Sent to micro:bit: NORMAL,10:00,0.92
+
+2024-03-06 10:00:00,106 Next hourly update in 0:59:59, at 2024-03-06 11:00:00
+2024-03-06 11:00:00,050 Price Level: NORMAL, Starts At: 11:00, Total: 0.919
+2024-03-06 11:00:00,050 Sent to micro:bit: NORMAL,11:00,0.92
+
+2024-03-06 11:00:00,051 Next hourly update in 0:59:59, at 2024-03-06 12:00:00
+2024-03-06 12:00:00,104 Price Level: NORMAL, Starts At: 12:00, Total: 0.9102
+2024-03-06 12:00:00,105 Sent to micro:bit: NORMAL,12:00,0.91
+
+2024-03-06 12:00:00,106 Next hourly update in 0:59:59, at 2024-03-06 13:00:00
+2024-03-06 13:00:00,105 Price Level: NORMAL, Starts At: 13:00, Total: 0.91
+2024-03-06 13:00:00,106 Sent to micro:bit: NORMAL,13:00,0.91
+
+2024-03-06 13:00:00,106 Next hourly update in 0:59:59, at 2024-03-06 14:00:00
+2024-03-06 14:00:00,048 Price Level: NORMAL, Starts At: 14:00, Total: 0.9167
+2024-03-06 14:00:00,050 Sent to micro:bit: NORMAL,14:00,0.92
+
+2024-03-06 14:00:00,051 Next hourly update in 0:59:59, at 2024-03-06 15:00:00
+2024-03-06 15:00:00,104 Price Level: NORMAL, Starts At: 15:00, Total: 0.9251
+2024-03-06 15:00:00,105 Sent to micro:bit: NORMAL,15:00,0.93
+
+2024-03-06 15:00:00,105 Next hourly update in 0:59:59, at 2024-03-06 16:00:00
+2024-03-06 16:00:00,047 Price Level: NORMAL, Starts At: 16:00, Total: 0.94
+2024-03-06 16:00:00,048 Sent to micro:bit: NORMAL,16:00,0.94
+
+2024-03-06 16:00:00,049 Next hourly update in 0:59:59, at 2024-03-06 17:00:00
+2024-03-06 17:00:00,062 Price Level: EXPENSIVE, Starts At: 17:00, Total: 1.1283
+2024-03-06 17:00:00,062 Sent to micro:bit: EXPENSIVE,17:00,1.13
+
+2024-03-06 17:00:00,063 Next hourly update in 0:59:59, at 2024-03-06 18:00:00
+2024-03-06 18:00:00,048 Price Level: VERY_EXPENSIVE, Starts At: 18:00, Total: 1.4409
+2024-03-06 18:00:00,048 Sent to micro:bit: VERY_EXPENSIVE,18:00,1.44
+
+2024-03-06 18:00:00,049 Next hourly update in 0:59:59, at 2024-03-06 19:00:00
+2024-03-06 19:00:00,105 Price Level: EXPENSIVE, Starts At: 19:00, Total: 1.1985
+2024-03-06 19:00:00,105 Sent to micro:bit: EXPENSIVE,19:00,1.2
+
+2024-03-06 19:00:00,106 Next hourly update in 0:59:59, at 2024-03-06 20:00:00
+2024-03-06 20:00:00,104 Price Level: NORMAL, Starts At: 20:00, Total: 1.0427
+2024-03-06 20:00:00,105 Sent to micro:bit: NORMAL,20:00,1.04
+
+2024-03-06 20:00:00,105 Next hourly update in 0:59:59, at 2024-03-06 21:00:00
+2024-03-06 21:00:00,048 Price Level: NORMAL, Starts At: 21:00, Total: 0.9835
+2024-03-06 21:00:00,049 Sent to micro:bit: NORMAL,21:00,0.98
+
+2024-03-06 21:00:00,050 Next hourly update in 0:59:59, at 2024-03-06 22:00:00
+2024-03-06 22:00:00,066 Price Level: NORMAL, Starts At: 22:00, Total: 0.9584
+2024-03-06 22:00:00,066 Sent to micro:bit: NORMAL,22:00,0.96
+
+2024-03-06 22:00:00,067 Next hourly update in 0:59:59, at 2024-03-06 23:00:00
+2024-03-06 23:00:00,104 Price Level: NORMAL, Starts At: 23:00, Total: 0.9414
+2024-03-06 23:00:00,105 Sent to micro:bit: NORMAL,23:00,0.94
+
+2024-03-06 23:00:00,105 Next hourly update in 0:59:59, at 2024-03-07 00:00:00
+2024-03-07 00:00:00,104 Price Level: NORMAL, Starts At: 00:00, Total: 0.8759
+2024-03-07 00:00:00,105 Sent to micro:bit: NORMAL,00:00,0.88
+
+2024-03-07 00:00:00,106 Next hourly update in 0:59:59, at 2024-03-07 01:00:00
+2024-03-07 01:00:00,105 Price Level: NORMAL, Starts At: 01:00, Total: 0.8798
+2024-03-07 01:00:00,106 Sent to micro:bit: NORMAL,01:00,0.88
+
+2024-03-07 01:00:00,106 Next hourly update in 0:59:59, at 2024-03-07 02:00:00
+2024-03-07 02:00:00,070 Price Level: NORMAL, Starts At: 02:00, Total: 0.8795
+2024-03-07 02:00:00,071 Sent to micro:bit: NORMAL,02:00,0.88
+
+2024-03-07 02:00:00,071 Next hourly update in 0:59:59, at 2024-03-07 03:00:00
+2024-03-07 03:00:00,104 Price Level: NORMAL, Starts At: 03:00, Total: 0.8781
+2024-03-07 03:00:00,105 Sent to micro:bit: NORMAL,03:00,0.88
+
+2024-03-07 03:00:00,105 Next hourly update in 0:59:59, at 2024-03-07 04:00:00
+2024-03-07 04:00:00,105 Price Level: NORMAL, Starts At: 04:00, Total: 0.8796
+2024-03-07 04:00:00,105 Sent to micro:bit: NORMAL,04:00,0.88
+
+2024-03-07 04:00:00,106 Next hourly update in 0:59:59, at 2024-03-07 05:00:00
+2024-03-07 04:31:37,044 Waiting for next daily price update in 1 day, 9:31:35 (hh:mm:ss), at 2024-03-06 18:00:00
+2024-03-07 05:00:00,048 Price Level: NORMAL, Starts At: 05:00, Total: 0.8928
+2024-03-07 05:00:00,049 Sent to micro:bit: NORMAL,05:00,0.89
+
+2024-03-07 05:00:00,050 Next hourly update in 0:59:59, at 2024-03-07 06:00:00
+2024-03-07 06:00:00,048 Price Level: NORMAL, Starts At: 06:00, Total: 0.907
+2024-03-07 06:00:00,049 Sent to micro:bit: NORMAL,06:00,0.91
+
+2024-03-07 06:00:00,050 Next hourly update in 0:59:59, at 2024-03-07 07:00:00
+2024-03-07 07:00:00,105 Price Level: NORMAL, Starts At: 07:00, Total: 0.9344
+2024-03-07 07:00:00,106 Sent to micro:bit: NORMAL,07:00,0.93
+
+2024-03-07 07:00:00,106 Next hourly update in 0:59:59, at 2024-03-07 08:00:00
+2024-03-07 08:00:00,105 Price Level: NORMAL, Starts At: 08:00, Total: 0.9478
+2024-03-07 08:00:00,105 Sent to micro:bit: NORMAL,08:00,0.95
+
+2024-03-07 08:00:00,106 Next hourly update in 0:59:59, at 2024-03-07 09:00:00
+2024-03-07 09:00:00,104 Price Level: NORMAL, Starts At: 09:00, Total: 0.925
+2024-03-07 09:00:00,105 Sent to micro:bit: NORMAL,09:00,0.93
+
+2024-03-07 09:00:00,105 Next hourly update in 0:59:59, at 2024-03-07 10:00:00
+2024-03-07 10:00:00,066 Price Level: NORMAL, Starts At: 10:00, Total: 0.9184
+2024-03-07 10:00:00,066 Sent to micro:bit: NORMAL,10:00,0.92
+
+2024-03-07 10:00:00,067 Next hourly update in 0:59:59, at 2024-03-07 11:00:00
+2024-03-07 11:00:00,057 Price Level: NORMAL, Starts At: 11:00, Total: 0.919
+2024-03-07 11:00:00,058 Sent to micro:bit: NORMAL,11:00,0.92
+
+2024-03-07 11:00:00,058 Next hourly update in 0:59:59, at 2024-03-07 12:00:00
+2024-03-07 12:00:00,105 Price Level: NORMAL, Starts At: 12:00, Total: 0.9102
+2024-03-07 12:00:00,105 Sent to micro:bit: NORMAL,12:00,0.91
+
+2024-03-07 12:00:00,106 Next hourly update in 0:59:59, at 2024-03-07 13:00:00
+2024-03-07 13:00:00,104 Price Level: NORMAL, Starts At: 13:00, Total: 0.91
+2024-03-07 13:00:00,105 Sent to micro:bit: NORMAL,13:00,0.91
+
+2024-03-07 13:00:00,105 Next hourly update in 0:59:59, at 2024-03-07 14:00:00
+2024-03-07 14:00:00,062 Price Level: NORMAL, Starts At: 14:00, Total: 0.9167
+2024-03-07 14:00:00,062 Sent to micro:bit: NORMAL,14:00,0.92
+
+2024-03-07 14:00:00,063 Next hourly update in 0:59:59, at 2024-03-07 15:00:00
+2024-03-07 15:00:00,066 Price Level: NORMAL, Starts At: 15:00, Total: 0.9251
+2024-03-07 15:00:00,066 Sent to micro:bit: NORMAL,15:00,0.93
+
+2024-03-07 15:00:00,067 Next hourly update in 0:59:59, at 2024-03-07 16:00:00
+2024-03-07 16:00:00,047 Price Level: NORMAL, Starts At: 16:00, Total: 0.94
+2024-03-07 16:00:00,048 Sent to micro:bit: NORMAL,16:00,0.94
+
+2024-03-07 16:00:00,049 Next hourly update in 0:59:59, at 2024-03-07 17:00:00
+2024-03-07 17:00:00,048 Price Level: EXPENSIVE, Starts At: 17:00, Total: 1.1283
+2024-03-07 17:00:00,049 Sent to micro:bit: EXPENSIVE,17:00,1.13
+
+2024-03-07 17:00:00,050 Next hourly update in 0:59:59, at 2024-03-07 18:00:00
+2024-03-07 18:00:00,105 Price Level: VERY_EXPENSIVE, Starts At: 18:00, Total: 1.4409
+2024-03-07 18:00:00,106 Sent to micro:bit: VERY_EXPENSIVE,18:00,1.44
+
+2024-03-07 18:00:00,107 Next hourly update in 0:59:59, at 2024-03-07 19:00:00
+2024-03-07 19:00:00,066 Price Level: EXPENSIVE, Starts At: 19:00, Total: 1.1985
+2024-03-07 19:00:00,066 Sent to micro:bit: EXPENSIVE,19:00,1.2
+
+2024-03-07 19:00:00,067 Next hourly update in 0:59:59, at 2024-03-07 20:00:00
+2024-03-07 20:00:00,048 Price Level: NORMAL, Starts At: 20:00, Total: 1.0427
+2024-03-07 20:00:00,049 Sent to micro:bit: NORMAL,20:00,1.04
+
+2024-03-07 20:00:00,050 Next hourly update in 0:59:59, at 2024-03-07 21:00:00
+2024-03-07 21:00:00,047 Price Level: NORMAL, Starts At: 21:00, Total: 0.9835
+2024-03-07 21:00:00,048 Sent to micro:bit: NORMAL,21:00,0.98
+
+2024-03-07 21:00:00,049 Next hourly update in 0:59:59, at 2024-03-07 22:00:00
+2024-03-07 22:00:00,105 Price Level: NORMAL, Starts At: 22:00, Total: 0.9584
+2024-03-07 22:00:00,106 Sent to micro:bit: NORMAL,22:00,0.96
+
+2024-03-07 22:00:00,106 Next hourly update in 0:59:59, at 2024-03-07 23:00:00
+2024-03-07 23:00:00,105 Price Level: NORMAL, Starts At: 23:00, Total: 0.9414
+2024-03-07 23:00:00,105 Sent to micro:bit: NORMAL,23:00,0.94
+
+2024-03-07 23:00:00,106 Next hourly update in 0:59:59, at 2024-03-08 00:00:00
+2024-03-08 00:00:00,048 Price Level: NORMAL, Starts At: 00:00, Total: 0.8759
+2024-03-08 00:00:00,049 Sent to micro:bit: NORMAL,00:00,0.88
+
+2024-03-08 00:00:00,050 Next hourly update in 0:59:59, at 2024-03-08 01:00:00
+2024-03-08 01:00:00,062 Price Level: NORMAL, Starts At: 01:00, Total: 0.8798
+2024-03-08 01:00:00,062 Sent to micro:bit: NORMAL,01:00,0.88
+
+2024-03-08 01:00:00,063 Next hourly update in 0:59:59, at 2024-03-08 02:00:00
+2024-03-08 02:00:00,066 Price Level: NORMAL, Starts At: 02:00, Total: 0.8795
+2024-03-08 02:00:00,066 Sent to micro:bit: NORMAL,02:00,0.88
+
+2024-03-08 02:00:00,067 Next hourly update in 0:59:59, at 2024-03-08 03:00:00
+2024-03-08 03:00:00,104 Price Level: NORMAL, Starts At: 03:00, Total: 0.8781
+2024-03-08 03:00:00,105 Sent to micro:bit: NORMAL,03:00,0.88
+
+2024-03-08 03:00:00,105 Next hourly update in 0:59:59, at 2024-03-08 04:00:00
+2024-03-08 04:00:00,030 Price Level: NORMAL, Starts At: 04:00, Total: 0.8796
+2024-03-08 04:00:00,030 Sent to micro:bit: NORMAL,04:00,0.88
+
+2024-03-08 04:00:00,031 Next hourly update in 0:59:59, at 2024-03-08 05:00:00
+2024-03-08 05:00:00,066 Price Level: NORMAL, Starts At: 05:00, Total: 0.8928
+2024-03-08 05:00:00,066 Sent to micro:bit: NORMAL,05:00,0.89
+
+2024-03-08 05:00:00,067 Next hourly update in 0:59:59, at 2024-03-08 06:00:00
+2024-03-08 06:00:00,048 Price Level: NORMAL, Starts At: 06:00, Total: 0.907
+2024-03-08 06:00:00,049 Sent to micro:bit: NORMAL,06:00,0.91
+
+2024-03-08 06:00:00,050 Next hourly update in 0:59:59, at 2024-03-08 07:00:00
+2024-03-08 07:00:00,105 Price Level: NORMAL, Starts At: 07:00, Total: 0.9344
+2024-03-08 07:00:00,106 Sent to micro:bit: NORMAL,07:00,0.93
+
+2024-03-08 07:00:00,106 Next hourly update in 0:59:59, at 2024-03-08 08:00:00
+2024-03-08 08:00:00,105 Price Level: NORMAL, Starts At: 08:00, Total: 0.9478
+2024-03-08 08:00:00,105 Sent to micro:bit: NORMAL,08:00,0.95
+
+2024-03-08 08:00:00,106 Next hourly update in 0:59:59, at 2024-03-08 09:00:00
+2024-03-08 09:00:00,104 Price Level: NORMAL, Starts At: 09:00, Total: 0.925
+2024-03-08 09:00:00,105 Sent to micro:bit: NORMAL,09:00,0.93
+
+2024-03-08 09:00:00,105 Next hourly update in 0:59:59, at 2024-03-08 10:00:00
+2024-03-08 10:00:00,104 Price Level: NORMAL, Starts At: 10:00, Total: 0.9184
+2024-03-08 10:00:00,105 Sent to micro:bit: NORMAL,10:00,0.92
+
+2024-03-08 10:00:00,106 Next hourly update in 0:59:59, at 2024-03-08 11:00:00
+2024-03-08 11:00:00,105 Price Level: NORMAL, Starts At: 11:00, Total: 0.919
+2024-03-08 11:00:00,106 Sent to micro:bit: NORMAL,11:00,0.92
+
+2024-03-08 11:00:00,106 Next hourly update in 0:59:59, at 2024-03-08 12:00:00
+2024-03-08 12:00:00,030 Price Level: NORMAL, Starts At: 12:00, Total: 0.9102
+2024-03-08 12:00:00,030 Sent to micro:bit: NORMAL,12:00,0.91
+
+2024-03-08 12:00:00,031 Next hourly update in 0:59:59, at 2024-03-08 13:00:00
+2024-03-08 13:00:00,047 Price Level: NORMAL, Starts At: 13:00, Total: 0.91
+2024-03-08 13:00:00,048 Sent to micro:bit: NORMAL,13:00,0.91
+
+2024-03-08 13:00:00,049 Next hourly update in 0:59:59, at 2024-03-08 14:00:00
+2024-03-08 14:00:00,105 Price Level: NORMAL, Starts At: 14:00, Total: 0.9167
+2024-03-08 14:00:00,106 Sent to micro:bit: NORMAL,14:00,0.92
+
+2024-03-08 14:00:00,106 Next hourly update in 0:59:59, at 2024-03-08 15:00:00
+2024-03-08 14:03:12,456 Waiting for next daily price update in 1 day, 3:56:47 (hh:mm:ss), at 2024-03-09 18:00:00
+2024-03-08 15:00:00,105 Price Level: NORMAL, Starts At: 15:00, Total: 0.9251
+2024-03-08 15:00:00,105 Sent to micro:bit: NORMAL,15:00,0.93
+
+2024-03-08 15:00:00,106 Next hourly update in 0:59:59, at 2024-03-08 16:00:00
+2024-03-08 16:00:00,104 Price Level: NORMAL, Starts At: 16:00, Total: 0.94
+2024-03-08 16:00:00,105 Sent to micro:bit: NORMAL,16:00,0.94
+
+2024-03-08 16:00:00,105 Next hourly update in 0:59:59, at 2024-03-08 17:00:00
+2024-03-08 17:00:00,104 Price Level: EXPENSIVE, Starts At: 17:00, Total: 1.1283
+2024-03-08 17:00:00,105 Sent to micro:bit: EXPENSIVE,17:00,1.13
+
+2024-03-08 17:00:00,105 Next hourly update in 0:59:59, at 2024-03-08 18:00:00
+2024-03-08 18:00:00,105 Price Level: VERY_EXPENSIVE, Starts At: 18:00, Total: 1.4409
+2024-03-08 18:00:00,106 Sent to micro:bit: VERY_EXPENSIVE,18:00,1.44
+
+2024-03-08 18:00:00,106 Next hourly update in 0:59:59, at 2024-03-08 19:00:00
+2024-03-08 19:00:00,104 Price Level: EXPENSIVE, Starts At: 19:00, Total: 1.1985
+2024-03-08 19:00:00,105 Sent to micro:bit: EXPENSIVE,19:00,1.2
+
+2024-03-08 19:00:00,105 Next hourly update in 0:59:59, at 2024-03-08 20:00:00
+2024-03-08 20:00:00,030 Price Level: NORMAL, Starts At: 20:00, Total: 1.0427
+2024-03-08 20:00:00,030 Sent to micro:bit: NORMAL,20:00,1.04
+
+2024-03-08 20:00:00,031 Next hourly update in 0:59:59, at 2024-03-08 21:00:00
+2024-03-08 21:00:00,048 Price Level: NORMAL, Starts At: 21:00, Total: 0.9835
+2024-03-08 21:00:00,049 Sent to micro:bit: NORMAL,21:00,0.98
+
+2024-03-08 21:00:00,050 Next hourly update in 0:59:59, at 2024-03-08 22:00:00
+2024-03-08 22:00:00,105 Price Level: NORMAL, Starts At: 22:00, Total: 0.9584
+2024-03-08 22:00:00,106 Sent to micro:bit: NORMAL,22:00,0.96
+
+2024-03-08 22:00:00,106 Next hourly update in 0:59:59, at 2024-03-08 23:00:00
+2024-03-08 23:00:00,048 Price Level: NORMAL, Starts At: 23:00, Total: 0.9414
+2024-03-08 23:00:00,049 Sent to micro:bit: NORMAL,23:00,0.94
+
+2024-03-08 23:00:00,050 Next hourly update in 0:59:59, at 2024-03-09 00:00:00
+2024-03-09 00:00:00,105 Price Level: NORMAL, Starts At: 00:00, Total: 0.8759
+2024-03-09 00:00:00,106 Sent to micro:bit: NORMAL,00:00,0.88
+
+2024-03-09 00:00:00,107 Next hourly update in 0:59:59, at 2024-03-09 01:00:00
+2024-03-09 01:00:00,105 Price Level: NORMAL, Starts At: 01:00, Total: 0.8798
+2024-03-09 01:00:00,105 Sent to micro:bit: NORMAL,01:00,0.88
+
+2024-03-09 01:00:00,106 Next hourly update in 0:59:59, at 2024-03-09 02:00:00
+2024-03-09 02:00:00,048 Price Level: NORMAL, Starts At: 02:00, Total: 0.8795
+2024-03-09 02:00:00,049 Sent to micro:bit: NORMAL,02:00,0.88
+
+2024-03-09 02:00:00,050 Next hourly update in 0:59:59, at 2024-03-09 03:00:00
+2024-03-09 03:00:00,054 Price Level: NORMAL, Starts At: 03:00, Total: 0.8781
+2024-03-09 03:00:00,055 Sent to micro:bit: NORMAL,03:00,0.88
+
+2024-03-09 03:00:00,055 Next hourly update in 0:59:59, at 2024-03-09 04:00:00
+2024-03-09 04:00:00,030 Price Level: NORMAL, Starts At: 04:00, Total: 0.8796
+2024-03-09 04:00:00,030 Sent to micro:bit: NORMAL,04:00,0.88
+
+2024-03-09 04:00:00,031 Next hourly update in 0:59:59, at 2024-03-09 05:00:00
+2024-03-09 05:00:00,070 Price Level: NORMAL, Starts At: 05:00, Total: 0.8928
+2024-03-09 05:00:00,070 Sent to micro:bit: NORMAL,05:00,0.89
+
+2024-03-09 05:00:00,071 Next hourly update in 0:59:59, at 2024-03-09 06:00:00
+2024-03-09 06:00:00,069 Price Level: NORMAL, Starts At: 06:00, Total: 0.907
+2024-03-09 06:00:00,070 Sent to micro:bit: NORMAL,06:00,0.91
+
+2024-03-09 06:00:00,071 Next hourly update in 0:59:59, at 2024-03-09 07:00:00
+2024-03-09 07:00:00,106 Price Level: NORMAL, Starts At: 07:00, Total: 0.9344
+2024-03-09 07:00:00,107 Sent to micro:bit: NORMAL,07:00,0.93
+
+2024-03-09 07:00:00,108 Next hourly update in 0:59:59, at 2024-03-09 08:00:00
+2024-03-09 08:00:00,062 Price Level: NORMAL, Starts At: 08:00, Total: 0.9478
+2024-03-09 08:00:00,062 Sent to micro:bit: NORMAL,08:00,0.95
+
+2024-03-09 08:00:00,063 Next hourly update in 0:59:59, at 2024-03-09 09:00:00
+2024-03-09 09:00:00,104 Price Level: NORMAL, Starts At: 09:00, Total: 0.925
+2024-03-09 09:00:00,105 Sent to micro:bit: NORMAL,09:00,0.93
+
+2024-03-09 09:00:00,105 Next hourly update in 0:59:59, at 2024-03-09 10:00:00
+2024-03-09 10:00:00,104 Price Level: NORMAL, Starts At: 10:00, Total: 0.9184
+2024-03-09 10:00:00,105 Sent to micro:bit: NORMAL,10:00,0.92
+
+2024-03-09 10:00:00,105 Next hourly update in 0:59:59, at 2024-03-09 11:00:00
+2024-03-09 11:00:00,047 Price Level: NORMAL, Starts At: 11:00, Total: 0.919
+2024-03-09 11:00:00,048 Sent to micro:bit: NORMAL,11:00,0.92
+
+2024-03-09 11:00:00,049 Next hourly update in 0:59:59, at 2024-03-09 12:00:00
+2024-03-09 12:00:00,066 Price Level: NORMAL, Starts At: 12:00, Total: 0.9102
+2024-03-09 12:00:00,066 Sent to micro:bit: NORMAL,12:00,0.91
+
+2024-03-09 12:00:00,067 Next hourly update in 0:59:59, at 2024-03-09 13:00:00
+2024-03-09 13:00:00,104 Price Level: NORMAL, Starts At: 13:00, Total: 0.91
+2024-03-09 13:00:00,105 Sent to micro:bit: NORMAL,13:00,0.91
+
+2024-03-09 13:00:00,105 Next hourly update in 0:59:59, at 2024-03-09 14:00:00
+2024-03-09 14:00:00,061 Price Level: NORMAL, Starts At: 14:00, Total: 0.9167
+2024-03-09 14:00:00,062 Sent to micro:bit: NORMAL,14:00,0.92
+
+2024-03-09 14:00:00,062 Next hourly update in 0:59:59, at 2024-03-09 15:00:00
+2024-03-09 15:00:00,062 Price Level: NORMAL, Starts At: 15:00, Total: 0.9251
+2024-03-09 15:00:00,062 Sent to micro:bit: NORMAL,15:00,0.93
+
+2024-03-09 15:00:00,063 Next hourly update in 0:59:59, at 2024-03-09 16:00:00
+2024-03-09 16:00:00,104 Price Level: NORMAL, Starts At: 16:00, Total: 0.94
+2024-03-09 16:00:00,105 Sent to micro:bit: NORMAL,16:00,0.94
+
+2024-03-09 16:00:00,105 Next hourly update in 0:59:59, at 2024-03-09 17:00:00
+2024-03-09 17:00:00,104 Price Level: EXPENSIVE, Starts At: 17:00, Total: 1.1283
+2024-03-09 17:00:00,105 Sent to micro:bit: EXPENSIVE,17:00,1.13
+
+2024-03-09 17:00:00,105 Next hourly update in 0:59:59, at 2024-03-09 18:00:00
+2024-03-09 18:00:00,105 Price Level: VERY_EXPENSIVE, Starts At: 18:00, Total: 1.4409
+2024-03-09 18:00:00,106 Sent to micro:bit: VERY_EXPENSIVE,18:00,1.44
+
+2024-03-09 18:00:00,106 Next hourly update in 0:59:59, at 2024-03-09 19:00:00
+2024-03-09 18:00:00,106 Waiting for next daily price update in 23:59:59 (hh:mm:ss), at 2024-03-10 18:00:00
+2024-03-09 19:00:00,105 Price Level: EXPENSIVE, Starts At: 19:00, Total: 1.1985
+2024-03-09 19:00:00,105 Sent to micro:bit: EXPENSIVE,19:00,1.2
+
+2024-03-09 19:00:00,106 Next hourly update in 0:59:59, at 2024-03-09 20:00:00
+2024-03-09 20:00:00,066 Price Level: NORMAL, Starts At: 20:00, Total: 1.0427
+2024-03-09 20:00:00,066 Sent to micro:bit: NORMAL,20:00,1.04
+
+2024-03-09 20:00:00,067 Next hourly update in 0:59:59, at 2024-03-09 21:00:00
+2024-03-09 21:00:00,104 Price Level: NORMAL, Starts At: 21:00, Total: 0.9835
+2024-03-09 21:00:00,105 Sent to micro:bit: NORMAL,21:00,0.98
+
+2024-03-09 21:00:00,105 Next hourly update in 0:59:59, at 2024-03-09 22:00:00
+2024-03-09 22:00:00,073 Price Level: NORMAL, Starts At: 22:00, Total: 0.9584
+2024-03-09 22:00:00,074 Sent to micro:bit: NORMAL,22:00,0.96
+
+2024-03-09 22:00:00,074 Next hourly update in 0:59:59, at 2024-03-09 23:00:00
+2024-03-09 23:00:00,066 Price Level: NORMAL, Starts At: 23:00, Total: 0.9414
+2024-03-09 23:00:00,066 Sent to micro:bit: NORMAL,23:00,0.94
+
+2024-03-09 23:00:00,067 Next hourly update in 0:59:59, at 2024-03-10 00:00:00
+2024-03-10 00:00:00,070 Price Level: NORMAL, Starts At: 00:00, Total: 0.8759
+2024-03-10 00:00:00,070 Sent to micro:bit: NORMAL,00:00,0.88
+
+2024-03-10 00:00:00,071 Next hourly update in 0:59:59, at 2024-03-10 01:00:00
+2024-03-10 01:00:00,066 Price Level: NORMAL, Starts At: 01:00, Total: 0.8798
+2024-03-10 01:00:00,066 Sent to micro:bit: NORMAL,01:00,0.88
+
+2024-03-10 01:00:00,067 Next hourly update in 0:59:59, at 2024-03-10 02:00:00
+2024-03-10 02:00:00,104 Price Level: NORMAL, Starts At: 02:00, Total: 0.8795
+2024-03-10 02:00:00,105 Sent to micro:bit: NORMAL,02:00,0.88
+
+2024-03-10 02:00:00,105 Next hourly update in 0:59:59, at 2024-03-10 03:00:00
+2024-03-10 03:00:00,066 Price Level: NORMAL, Starts At: 03:00, Total: 0.8781
+2024-03-10 03:00:00,066 Sent to micro:bit: NORMAL,03:00,0.88
+
+2024-03-10 03:00:00,067 Next hourly update in 0:59:59, at 2024-03-10 04:00:00
+2024-03-10 04:00:00,066 Price Level: NORMAL, Starts At: 04:00, Total: 0.8796
+2024-03-10 04:00:00,066 Sent to micro:bit: NORMAL,04:00,0.88
+
+2024-03-10 04:00:00,067 Next hourly update in 0:59:59, at 2024-03-10 05:00:00
+2024-03-10 05:00:00,104 Price Level: NORMAL, Starts At: 05:00, Total: 0.8928
+2024-03-10 05:00:00,105 Sent to micro:bit: NORMAL,05:00,0.89
+
+2024-03-10 05:00:00,105 Next hourly update in 0:59:59, at 2024-03-10 06:00:00
+2024-03-10 06:00:00,104 Price Level: NORMAL, Starts At: 06:00, Total: 0.907
+2024-03-10 06:00:00,105 Sent to micro:bit: NORMAL,06:00,0.91
+
+2024-03-10 06:00:00,105 Next hourly update in 0:59:59, at 2024-03-10 07:00:00
+2024-03-10 07:00:00,105 Price Level: NORMAL, Starts At: 07:00, Total: 0.9344
+2024-03-10 07:00:00,105 Sent to micro:bit: NORMAL,07:00,0.93
+
+2024-03-10 07:00:00,106 Next hourly update in 0:59:59, at 2024-03-10 08:00:00
+2024-03-10 08:00:00,066 Price Level: NORMAL, Starts At: 08:00, Total: 0.9478
+2024-03-10 08:00:00,066 Sent to micro:bit: NORMAL,08:00,0.95
+
+2024-03-10 08:00:00,067 Next hourly update in 0:59:59, at 2024-03-10 09:00:00
+2024-03-10 09:00:00,104 Price Level: NORMAL, Starts At: 09:00, Total: 0.925
+2024-03-10 09:00:00,105 Sent to micro:bit: NORMAL,09:00,0.93
+
+2024-03-10 09:00:00,105 Next hourly update in 0:59:59, at 2024-03-10 10:00:00
+2024-03-10 10:00:00,027 Price Level: NORMAL, Starts At: 10:00, Total: 0.9184
+2024-03-10 10:00:00,027 Sent to micro:bit: NORMAL,10:00,0.92
+
+2024-03-10 10:00:00,028 Next hourly update in 0:59:59, at 2024-03-10 11:00:00
+2024-03-10 11:00:00,104 Price Level: NORMAL, Starts At: 11:00, Total: 0.919
+2024-03-10 11:00:00,105 Sent to micro:bit: NORMAL,11:00,0.92
+
+2024-03-10 11:00:00,105 Next hourly update in 0:59:59, at 2024-03-10 12:00:00
+2024-03-10 12:00:00,061 Price Level: NORMAL, Starts At: 12:00, Total: 0.9102
+2024-03-10 12:00:00,062 Sent to micro:bit: NORMAL,12:00,0.91
+
+2024-03-10 12:00:00,063 Next hourly update in 0:59:59, at 2024-03-10 13:00:00
+2024-03-10 13:00:00,104 Price Level: NORMAL, Starts At: 13:00, Total: 0.91
+2024-03-10 13:00:00,105 Sent to micro:bit: NORMAL,13:00,0.91
+
+2024-03-10 13:00:00,105 Next hourly update in 0:59:59, at 2024-03-10 14:00:00
+2024-03-10 14:00:00,104 Price Level: NORMAL, Starts At: 14:00, Total: 0.9167
+2024-03-10 14:00:00,105 Sent to micro:bit: NORMAL,14:00,0.92
+
+2024-03-10 14:00:00,105 Next hourly update in 0:59:59, at 2024-03-10 15:00:00
+2024-03-10 15:00:00,006 Price Level: NORMAL, Starts At: 15:00, Total: 0.9251
+2024-03-10 15:00:00,006 Sent to micro:bit: NORMAL,15:00,0.93
+
+2024-03-10 15:00:00,007 Next hourly update in 0:59:59, at 2024-03-10 16:00:00
+2024-03-10 16:00:00,012 Price Level: NORMAL, Starts At: 16:00, Total: 0.94
+2024-03-10 16:00:00,012 Sent to micro:bit: NORMAL,16:00,0.94
+
+2024-03-10 16:00:00,013 Next hourly update in 0:59:59, at 2024-03-10 17:00:00
+2024-03-10 17:00:00,066 Price Level: EXPENSIVE, Starts At: 17:00, Total: 1.1283
+2024-03-10 17:00:00,066 Sent to micro:bit: EXPENSIVE,17:00,1.13
+
+2024-03-10 17:00:00,067 Next hourly update in 0:59:59, at 2024-03-10 18:00:00
+2024-03-10 18:00:00,101 Waiting for next daily price update in 23:59:59 (hh:mm:ss), at 2024-03-11 18:00:00
+2024-03-10 18:00:00,105 Price Level: VERY_EXPENSIVE, Starts At: 18:00, Total: 1.4409
+2024-03-10 18:00:00,105 Sent to micro:bit: VERY_EXPENSIVE,18:00,1.44
+
+2024-03-10 18:00:00,106 Next hourly update in 0:59:59, at 2024-03-10 19:00:00
+2024-03-10 18:50:32,008 Unclosed client session
+client_session: <aiohttp.client.ClientSession object at 0x7f7de19350>
