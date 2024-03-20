@@ -6,13 +6,14 @@ from dateutil import parser
 import logging
 import json
 
-#TODO:
-#
-logging.basicConfig(filename='tibber_microbit.log', level=logging.INFO, format='%(asctime)s %(message)s')
+# Sensors: accelerometer, microphone, temperature, light
+# Inputs: buttons, USB, 
+# Outputs: LEDs, Speaker, 
+
+logging.basicConfig(filename='tibber_microbit.log', level=logging.INFO, format='%(asctime)s [%(levelname)s] %(message)s')
 
 class MicroBitCommunicator:
-    port = '/dev/ttyACM0' #'/dev/cu.usbmodem11102
-    def __init__(self, port=port, baudrate=115200):
+    def __init__(self, port='/dev/cu.usbmodem11102', baudrate=115200): #/dev/ttyACM0
         self.port = port
         self.baudrate = baudrate
         self.serial_conn = None
@@ -20,28 +21,38 @@ class MicroBitCommunicator:
     def connect(self):
         try:
             self.serial_conn = serial.Serial(self.port, self.baudrate)
-            logging.info("Connected to micro:bit on RPi")
+            logging.info("Successfully connected to micro:bit")
         except Exception as e:
-            logging.error(f"Failed to connect to micro:bit on {self.port}: {e}")
+            logging.error(f"Connection failed: {e}")
+            raise  # Raising exception to handle failure appropriately
 
     def send_to_microbit(self, message, startsAt, total):
-        full_message = f"{message},{startsAt},{round(total,2)}\n"
         try:
+            full_message = f"{message},{startsAt},{round(total,2)}\n"
             self.serial_conn.write(full_message.encode('utf-8'))
-            logging.info(f"Sent to micro:bit: {full_message}")
+            logging.info(f"Message sent to micro:bit: {full_message}")
         except Exception as e:
-            logging.error(f"Failed to send to micro:bit: {e}")
+            logging.error(f"Sending message failed: {e}")
+            self.reconnect()  # Attempt to reconnect on send failure
 
     def disconnect(self):
         if self.serial_conn:
             self.serial_conn.close()
-            logging.info("Disconnected from micro:bit")
+            logging.info("Micro:bit disconnected")
+
+    def reconnect(self):
+        logging.info("Attempting to reconnect to micro:bit...")
+        self.disconnect()
+        self.connect()
 
 
 def send_update_to_microbit(cache, microbit_communicator):
-    price_level, startsAt, total = cache.get_current_price_info()
-    logging.info(f"Price Level: {price_level}, Starts At: {startsAt}, Total: {total}")
-    microbit_communicator.send_to_microbit(price_level, startsAt, total)
+    try:
+        price_level, startsAt, total = cache.get_current_price_info()
+        microbit_communicator.send_to_microbit(price_level, startsAt, total)
+    except Exception as e:
+        logging.error(f"Update send failed: {e}")
+        microbit_communicator.reconnect()  # Reconnect in case of communication failure
 
 
 class PriceCache:
