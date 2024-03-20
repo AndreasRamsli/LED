@@ -860,3 +860,59 @@ client_session: <aiohttp.client.ClientSession object at 0x7f7de19350>
 2024-03-20 13:00:00,070 Next hourly update in 0:59:59, at 2024-03-20 14:00:00
 2024-03-20 13:32:44,103 Unclosed client session
 client_session: <aiohttp.client.ClientSession object at 0x7fa44f9450>
+2024-03-20 15:45:44,515 [INFO] Successfully connected to micro:bit
+2024-03-20 15:45:44,601 [INFO] Updating cache with new today prices.
+2024-03-20 15:45:44,603 [INFO] Updating cache with new tomorrow prices.
+2024-03-20 15:45:44,604 [INFO] Data returned from API.
+2024-03-20 15:45:44,604 [INFO] Waiting for next daily price update in 1 day, 2:14:15 (hh:mm:ss), at 2024-03-21 18:00:00
+2024-03-20 15:45:44,609 [INFO] Message sent to micro:bit: NORMAL,15:00,1.06
+
+2024-03-20 15:45:44,609 [INFO] Next hourly update in 0:14:15, at 2024-03-20 16:00:00
+2024-03-20 15:47:35,228 [ERROR] Unclosed client session
+client_session: <aiohttp.client.ClientSession object at 0x1061a0770>
+2024-03-20 15:47:45,642 [INFO] Successfully connected to micro:bit
+2024-03-20 15:47:45,723 [INFO] Updating cache with new today prices.
+2024-03-20 15:47:45,725 [INFO] Updating cache with new tomorrow prices.
+2024-03-20 15:47:45,726 [INFO] Data returned from API.
+2024-03-20 15:47:45,726 [INFO] Waiting for next daily price update in 1 day, 2:12:14 (hh:mm:ss), at 2024-03-21 18:00:00
+2024-03-20 15:47:45,731 [INFO] Message sent to micro:bit: NORMAL,15:00,1.06
+
+2024-03-20 15:47:45,732 [INFO] Next hourly update in 0:12:14, at 2024-03-20 16:00:00
+2024-03-20 15:48:16,411 [ERROR] Unclosed client session
+client_session: <aiohttp.client.ClientSession object at 0x105f8d670>
+2024-03-20 15:56:07,272 [INFO] Successfully connected to micro:bit
+2024-03-20 15:56:07,341 [INFO] Updating cache with new today prices.
+2024-03-20 15:56:07,343 [INFO] Updating cache with new tomorrow prices.
+2024-03-20 15:56:07,344 [INFO] Data returned from API.
+2024-03-20 15:56:07,344 [INFO] Waiting for next daily price update in 1 day, 2:03:52 (hh:mm:ss), at 2024-03-21 18:00:00
+2024-03-20 15:56:07,350 [INFO] Message sent to micro:bit: NORMAL,15:00,1.06
+
+2024-03-20 15:56:07,350 [INFO] Next hourly update in 0:03:52, at 2024-03-20 16:00:00
+2024-03-20 15:59:59,993 [INFO] Message sent to micro:bit: NORMAL,15:00,1.06
+
+2024-03-20 15:59:59,995 [INFO] Next hourly update in 0:00:00, at 2024-03-20 16:00:00
+2024-03-20 16:00:00,001 [INFO] Message sent to micro:bit: EXPENSIVE,16:00,1.14
+
+2024-03-20 16:00:00,002 [INFO] Next hourly update in 0:59:59, at 2024-03-20 17:00:00
+2024-03-20 16:02:00,514 [ERROR] Unclosed client session
+client_session: <aiohttp.client.ClientSession object at 0x1074b2510>
+2024-03-20 16:02:03,601 [INFO] Successfully connected to micro:bit
+2024-03-20 16:02:03,685 [INFO] Updating cache with new today prices.
+2024-03-20 16:02:03,687 [INFO] Updating cache with new tomorrow prices.
+2024-03-20 16:02:03,688 [INFO] Data returned from API.
+2024-03-20 16:02:03,688 [INFO] Waiting for next daily price update in 1 day, 1:57:56 (hh:mm:ss), at 2024-03-21 18:00:00
+2024-03-20 16:02:03,694 [INFO] Message sent to micro:bit: EXPENSIVE,16:00,1.14
+
+2024-03-20 16:02:03,694 [INFO] Next hourly update in 0:57:56, at 2024-03-20 17:00:00
+2024-03-20 16:04:24,715 [ERROR] Unclosed client session
+client_session: <aiohttp.client.ClientSession object at 0x10650c3e0>
+2024-03-20 16:09:45,469 [INFO] Successfully connected to micro:bit
+2024-03-20 16:09:45,535 [INFO] Updating cache with new today prices.
+2024-03-20 16:09:45,537 [INFO] Updating cache with new tomorrow prices.
+2024-03-20 16:09:45,538 [INFO] Data returned from API.
+2024-03-20 16:09:45,538 [INFO] Waiting for next daily price update in 1 day, 1:50:14 (hh:mm:ss), at 2024-03-21 18:00:00
+2024-03-20 16:09:45,544 [INFO] Message sent to micro:bit: EXPENSIVE,16:00,1.14
+
+2024-03-20 16:09:45,544 [INFO] Next hourly update in 0:50:14, at 2024-03-20 17:00:00
+2024-03-20 16:10:11,275 [ERROR] Unclosed client session
+client_session: <aiohttp.client.ClientSession object at 0x104f386b0>
