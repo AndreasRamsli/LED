@@ -1498,3 +1498,24 @@ connector: <aiohttp.connector.TCPConnector object at 0x7f87b192d0>
 2024-03-26 11:00:00,106 Next hourly update in 0:59:59, at 2024-03-26 12:00:00
 2024-03-26 11:01:09,155 Unclosed client session
 client_session: <aiohttp.client.ClientSession object at 0x7f882691d0>
+2024-03-26 11:50:06,328 Failed to connect to micro:bit on /dev/ttyACM0: [Errno 2] could not open port /dev/ttyACM0: [Errno 2] No such file or directory: '/dev/ttyACM0'
+2024-03-26 11:50:06,412 Updating cache with new today prices.
+2024-03-26 11:50:06,413 No new price info for cache
+2024-03-26 11:50:06,413 Data returned from API.
+2024-03-26 11:50:06,413 Waiting until 18:00 for the first attempt to fetch tomorrow's data in 6:09:53 (hh:mm:ss), at 2024-03-26 18:00:00
+2024-03-26 11:50:06,415 Price Level: CHEAP, Starts At: 11:00, Total: 0.8298
+2024-03-26 11:50:06,415 Failed to send to micro:bit: 'NoneType' object has no attribute 'write'
+2024-03-26 11:50:06,415 Next hourly update in 0:09:53, at 2024-03-26 12:00:00
+2024-03-26 11:50:23,838 Unclosed client session
+client_session: <aiohttp.client.ClientSession object at 0x102087290>
+2024-03-26 11:50:59,350 Connected to micro:bit on RPi
+2024-03-26 11:50:59,418 Updating cache with new today prices.
+2024-03-26 11:50:59,419 No new price info for cache
+2024-03-26 11:50:59,420 Data returned from API.
+2024-03-26 11:50:59,420 Waiting until 18:00 for the first attempt to fetch tomorrow's data in 6:09:00 (hh:mm:ss), at 2024-03-26 18:00:00
+2024-03-26 11:50:59,425 Price Level: CHEAP, Starts At: 11:00, Total: 0.8298
+2024-03-26 11:50:59,426 Sent to micro:bit: CHEAP,11:00,0.83
+
+2024-03-26 11:50:59,426 Next hourly update in 0:09:00, at 2024-03-26 12:00:00
+2024-03-26 11:51:36,284 Unclosed client session
+client_session: <aiohttp.client.ClientSession object at 0x102f08320>

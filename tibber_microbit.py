@@ -11,7 +11,7 @@ import json
 logging.basicConfig(filename='tibber_microbit.log', level=logging.INFO, format='%(asctime)s %(message)s')
 
 class MicroBitCommunicator:
-    port = '/dev/ttyACM0' #'/dev/cu.usbmodem11102
+    port = '/dev/ttyACM0' # /dev/cu.usbmodem11102
     def __init__(self, port=port, baudrate=115200):
         self.port = port
         self.baudrate = baudrate
