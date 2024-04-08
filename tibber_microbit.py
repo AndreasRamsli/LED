@@ -5,13 +5,19 @@ import serial
 from dateutil import parser
 import logging
 import json
+import backoff
 
 #TODO:
+
+#BUG:
+#Wrong price and price_level displayed on the microbit after longrun.
+#Debug the PriceCache class, find out why the total differs from the API-total. Maybe something wrong with the update_cache function.
+#the timestamps might be modified or categorized wrong. 
 
 logging.basicConfig(filename='tibber_microbit.log', level=logging.INFO, format='%(asctime)s %(message)s')
 
 class MicroBitCommunicator:
-    port = '/dev/ttyACM0' # /dev/cu.usbmodem11102
+    port = '/dev/cu.usbmodem11102' # /dev/ttyACM0
     def __init__(self, port=port, baudrate=115200):
         self.port = port
         self.baudrate = baudrate
@@ -20,7 +26,7 @@ class MicroBitCommunicator:
     def connect(self):
         try:
             self.serial_conn = serial.Serial(self.port, self.baudrate)
-            logging.info("Connected to micro:bit on RPi")
+            logging.info("Connected to micro:bit on macOS")
         except Exception as e:
             logging.error(f"Failed to connect to micro:bit on {self.port}: {e}")
 
@@ -49,40 +55,55 @@ class PriceCache:
         self.cache = {'today': {}, 'tomorrow': {}}
 
     def update_cache(self, price_info):
-        today_prices = price_info['viewer']['home']['currentSubscription']['priceInfo']['today']
-        tomorrow_prices = price_info['viewer']['home']['currentSubscription']['priceInfo']['tomorrow']
+        self.clear_old_prices()  # Ensure the cache is current before updating
 
-        new_today_json = json.dumps(today_prices, sort_keys=True)
-        new_tomorrow_json = json.dumps(tomorrow_prices, sort_keys=True)
-        existing_today_json = json.dumps([self.cache['today'][hour] for hour in sorted(self.cache['today'])], sort_keys=True)
-        existing_tomorrow_json = json.dumps([self.cache['tomorrow'][hour] for hour in sorted(self.cache['tomorrow'])], sort_keys=True)
+        for period in ['today', 'tomorrow']:
+            new_prices = price_info['viewer']['home']['currentSubscription']['priceInfo'][period]
+            new_prices_json = json.dumps(new_prices, sort_keys=True)
+            existing_prices_json = json.dumps([self.cache[period][hour] for hour in sorted(self.cache[period])], sort_keys=True)
 
-        if new_today_json != existing_today_json:
-            logging.info('Updating cache with new today prices.')
-            for entry in today_prices:
-                hour = parser.isoparse(entry['startsAt']).hour
-                self.cache['today'][str(hour)] = entry
-
-        if new_tomorrow_json != existing_tomorrow_json:
-            logging.info('Updating cache with new tomorrow prices.')
-            for entry in tomorrow_prices:
-                hour = parser.isoparse(entry['startsAt']).hour
-                self.cache['tomorrow'][str(hour)] = entry
-        else:
-            logging.info('No new price info for cache')
+            if new_prices_json != existing_prices_json:
+                logging.info(f'Updating cache with new {period} prices.')
+                self.cache[period] = {str(parser.isoparse(entry['startsAt']).hour): entry for entry in new_prices}
+            else:
+                logging.info(f'No new price info for {period}.')
+        self.log_cache_contents()
 
     def get_current_price_info(self):
         now = datetime.now(timezone.utc).astimezone()
         current_hour = str(now.hour)
-
-        day = 'today'
-        if any(datetime.strptime(entry['startsAt'], '%Y-%m-%dT%H:%M:%S.%f%z').date() > now.date() for entry in self.cache['today'].values()):
-            day = 'tomorrow'
+        day = self.determine_current_period()
 
         if current_hour in self.cache[day]:
             entry = self.cache[day][current_hour]
             return entry['level'], parser.isoparse(entry['startsAt']).strftime('%H:%M'), entry['total']
+        
         return 'Unknown', '00:00', 0.0
+
+    def determine_current_period(self):
+        now = datetime.now(timezone.utc).astimezone().date()
+        tomorrow_entries = list(self.cache['tomorrow'].values())
+        
+        if tomorrow_entries and now >= parser.isoparse(tomorrow_entries[0]['startsAt']).date():
+            return 'tomorrow'
+        return 'today'
+
+    def clear_old_prices(self):
+        """Adjusts the cache based on the current date, removing outdated entries."""
+        now = datetime.now(timezone.utc).astimezone().date()
+        today_entries = list(self.cache['today'].values())
+        
+        if today_entries and now > parser.isoparse(today_entries[0]['startsAt']).date():
+            logging.info("Clearing outdated 'today' prices from the cache.")
+            self.cache['today'] = self.cache['tomorrow']
+            self.cache['tomorrow'] = {}
+
+    def log_cache_contents(self):
+        logging.info("Current Cache State:")
+        for day, prices in self.cache.items():
+            logging.info(f"{day}:")
+            for hour, price_info in prices.items():
+                logging.info(f"  Hour: {hour}, Price Info: {price_info}")
 
 
 
@@ -109,16 +130,22 @@ async def fetch_prices_daily(tibber_connection, cache, home_id, microbit_communi
 
 
 
+@backoff.on_exception(backoff.expo, Exception, max_tries=5)
 async def fetch_prices(tibber_connection, cache, home_id):
-    query = gql_queries.PRICE_INFO % home_id
-    data = await tibber_connection.execute(query)
-    if data:
-        cache.update_cache(data)
-        logging.info("Data returned from API.")
-        return True
-    else:
-        logging.info("No data returned from the API.")
-        return False
+    try:
+        query = gql_queries.PRICE_INFO % home_id
+        data = await tibber_connection.execute(query)
+        if data:
+            cache.update_cache(data)
+            logging.info(data)
+            logging.info("Data returned from API.")
+            return True
+        else:
+            logging.info("No data returned from the API.")
+            return False
+    except Exception as e:
+        logging.error(f"Error fetching prices: {e}")
+        raise  # Reraising the exception to trigger the retry mechanism
 
 
 
