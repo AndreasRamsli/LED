@@ -2949,3 +2949,163 @@ client_session: <aiohttp.client.ClientSession object at 0x102670950>
 2024-04-08 19:17:33,468 Next hourly update in 0:42:26, at 2024-04-08 20:00:00
 2024-04-08 19:18:28,341 Unclosed client session
 client_session: <aiohttp.client.ClientSession object at 0x105c0dfa0>
+2024-04-08 19:36:35,644 Connected to micro:bit on RPi
+2024-04-08 19:36:35,707 Updating cache with new today prices.
+2024-04-08 19:36:35,709 Updating cache with new tomorrow prices.
+2024-04-08 19:36:35,710 Current Cache State:
+2024-04-08 19:36:35,710 today:
+2024-04-08 19:36:35,710   Hour: 0, Price Info: {'total': 0.7006, 'startsAt': '2024-04-08T00:00:00.000+02:00', 'level': 'NORMAL'}
+2024-04-08 19:36:35,710   Hour: 1, Price Info: {'total': 0.6742, 'startsAt': '2024-04-08T01:00:00.000+02:00', 'level': 'CHEAP'}
+2024-04-08 19:36:35,710   Hour: 2, Price Info: {'total': 0.668, 'startsAt': '2024-04-08T02:00:00.000+02:00', 'level': 'CHEAP'}
+2024-04-08 19:36:35,711   Hour: 3, Price Info: {'total': 0.7086, 'startsAt': '2024-04-08T03:00:00.000+02:00', 'level': 'NORMAL'}
+2024-04-08 19:36:35,711   Hour: 4, Price Info: {'total': 0.7362, 'startsAt': '2024-04-08T04:00:00.000+02:00', 'level': 'NORMAL'}
+2024-04-08 19:36:35,711   Hour: 5, Price Info: {'total': 0.7534, 'startsAt': '2024-04-08T05:00:00.000+02:00', 'level': 'NORMAL'}
+2024-04-08 19:36:35,711   Hour: 6, Price Info: {'total': 0.7947, 'startsAt': '2024-04-08T06:00:00.000+02:00', 'level': 'NORMAL'}
+2024-04-08 19:36:35,711   Hour: 7, Price Info: {'total': 0.8322, 'startsAt': '2024-04-08T07:00:00.000+02:00', 'level': 'NORMAL'}
+2024-04-08 19:36:35,711   Hour: 8, Price Info: {'total': 0.8774, 'startsAt': '2024-04-08T08:00:00.000+02:00', 'level': 'EXPENSIVE'}
+2024-04-08 19:36:35,711   Hour: 9, Price Info: {'total': 0.8595, 'startsAt': '2024-04-08T09:00:00.000+02:00', 'level': 'NORMAL'}
+2024-04-08 19:36:35,711   Hour: 10, Price Info: {'total': 0.8444, 'startsAt': '2024-04-08T10:00:00.000+02:00', 'level': 'NORMAL'}
+2024-04-08 19:36:35,711   Hour: 11, Price Info: {'total': 0.8379, 'startsAt': '2024-04-08T11:00:00.000+02:00', 'level': 'NORMAL'}
+2024-04-08 19:36:35,711   Hour: 12, Price Info: {'total': 0.8334, 'startsAt': '2024-04-08T12:00:00.000+02:00', 'level': 'NORMAL'}
+2024-04-08 19:36:35,711   Hour: 13, Price Info: {'total': 0.8334, 'startsAt': '2024-04-08T13:00:00.000+02:00', 'level': 'NORMAL'}
+2024-04-08 19:36:35,711   Hour: 14, Price Info: {'total': 0.8334, 'startsAt': '2024-04-08T14:00:00.000+02:00', 'level': 'NORMAL'}
+2024-04-08 19:36:35,712   Hour: 15, Price Info: {'total': 0.8306, 'startsAt': '2024-04-08T15:00:00.000+02:00', 'level': 'NORMAL'}
+2024-04-08 19:36:35,712   Hour: 16, Price Info: {'total': 0.8334, 'startsAt': '2024-04-08T16:00:00.000+02:00', 'level': 'NORMAL'}
+2024-04-08 19:36:35,712   Hour: 17, Price Info: {'total': 0.853, 'startsAt': '2024-04-08T17:00:00.000+02:00', 'level': 'NORMAL'}
+2024-04-08 19:36:35,712   Hour: 18, Price Info: {'total': 0.864, 'startsAt': '2024-04-08T18:00:00.000+02:00', 'level': 'NORMAL'}
+2024-04-08 19:36:35,712   Hour: 19, Price Info: {'total': 0.9177, 'startsAt': '2024-04-08T19:00:00.000+02:00', 'level': 'EXPENSIVE'}
+2024-04-08 19:36:35,712   Hour: 20, Price Info: {'total': 0.9295, 'startsAt': '2024-04-08T20:00:00.000+02:00', 'level': 'EXPENSIVE'}
+2024-04-08 19:36:35,712   Hour: 21, Price Info: {'total': 0.8767, 'startsAt': '2024-04-08T21:00:00.000+02:00', 'level': 'EXPENSIVE'}
+2024-04-08 19:36:35,712   Hour: 22, Price Info: {'total': 0.8566, 'startsAt': '2024-04-08T22:00:00.000+02:00', 'level': 'NORMAL'}
+2024-04-08 19:36:35,712   Hour: 23, Price Info: {'total': 0.8412, 'startsAt': '2024-04-08T23:00:00.000+02:00', 'level': 'NORMAL'}
+2024-04-08 19:36:35,712 tomorrow:
+2024-04-08 19:36:35,712   Hour: 0, Price Info: {'total': 0.8153, 'startsAt': '2024-04-09T00:00:00.000+02:00', 'level': 'NORMAL'}
+2024-04-08 19:36:35,712   Hour: 1, Price Info: {'total': 0.8098, 'startsAt': '2024-04-09T01:00:00.000+02:00', 'level': 'NORMAL'}
+2024-04-08 19:36:35,713   Hour: 2, Price Info: {'total': 0.8053, 'startsAt': '2024-04-09T02:00:00.000+02:00', 'level': 'NORMAL'}
+2024-04-08 19:36:35,713   Hour: 3, Price Info: {'total': 0.7995, 'startsAt': '2024-04-09T03:00:00.000+02:00', 'level': 'NORMAL'}
+2024-04-08 19:36:35,713   Hour: 4, Price Info: {'total': 0.7966, 'startsAt': '2024-04-09T04:00:00.000+02:00', 'level': 'NORMAL'}
+2024-04-08 19:36:35,713   Hour: 5, Price Info: {'total': 0.8033, 'startsAt': '2024-04-09T05:00:00.000+02:00', 'level': 'NORMAL'}
+2024-04-08 19:36:35,713   Hour: 6, Price Info: {'total': 0.8835, 'startsAt': '2024-04-09T06:00:00.000+02:00', 'level': 'EXPENSIVE'}
+2024-04-08 19:36:35,713   Hour: 7, Price Info: {'total': 1.3263, 'startsAt': '2024-04-09T07:00:00.000+02:00', 'level': 'VERY_EXPENSIVE'}
+2024-04-08 19:36:35,713   Hour: 8, Price Info: {'total': 1.2015, 'startsAt': '2024-04-09T08:00:00.000+02:00', 'level': 'VERY_EXPENSIVE'}
+2024-04-08 19:36:35,713   Hour: 9, Price Info: {'total': 1.0344, 'startsAt': '2024-04-09T09:00:00.000+02:00', 'level': 'EXPENSIVE'}
+2024-04-08 19:36:35,713   Hour: 10, Price Info: {'total': 0.8128, 'startsAt': '2024-04-09T10:00:00.000+02:00', 'level': 'NORMAL'}
+2024-04-08 19:36:35,713   Hour: 11, Price Info: {'total': 0.7345, 'startsAt': '2024-04-09T11:00:00.000+02:00', 'level': 'NORMAL'}
+2024-04-08 19:36:35,713   Hour: 12, Price Info: {'total': 0.6678, 'startsAt': '2024-04-09T12:00:00.000+02:00', 'level': 'CHEAP'}
+2024-04-08 19:36:35,713   Hour: 13, Price Info: {'total': 0.6641, 'startsAt': '2024-04-09T13:00:00.000+02:00', 'level': 'CHEAP'}
+2024-04-08 19:36:35,714   Hour: 14, Price Info: {'total': 0.6619, 'startsAt': '2024-04-09T14:00:00.000+02:00', 'level': 'CHEAP'}
+2024-04-08 19:36:35,714   Hour: 15, Price Info: {'total': 0.6618, 'startsAt': '2024-04-09T15:00:00.000+02:00', 'level': 'CHEAP'}
+2024-04-08 19:36:35,714   Hour: 16, Price Info: {'total': 0.6581, 'startsAt': '2024-04-09T16:00:00.000+02:00', 'level': 'CHEAP'}
+2024-04-08 19:36:35,714   Hour: 17, Price Info: {'total': 0.7823, 'startsAt': '2024-04-09T17:00:00.000+02:00', 'level': 'NORMAL'}
+2024-04-08 19:36:35,714   Hour: 18, Price Info: {'total': 0.8146, 'startsAt': '2024-04-09T18:00:00.000+02:00', 'level': 'NORMAL'}
+2024-04-08 19:36:35,714   Hour: 19, Price Info: {'total': 0.7889, 'startsAt': '2024-04-09T19:00:00.000+02:00', 'level': 'NORMAL'}
+2024-04-08 19:36:35,714   Hour: 20, Price Info: {'total': 0.7962, 'startsAt': '2024-04-09T20:00:00.000+02:00', 'level': 'NORMAL'}
+2024-04-08 19:36:35,714   Hour: 21, Price Info: {'total': 0.7801, 'startsAt': '2024-04-09T21:00:00.000+02:00', 'level': 'NORMAL'}
+2024-04-08 19:36:35,714   Hour: 22, Price Info: {'total': 0.7404, 'startsAt': '2024-04-09T22:00:00.000+02:00', 'level': 'NORMAL'}
+2024-04-08 19:36:35,714   Hour: 23, Price Info: {'total': 0.6302, 'startsAt': '2024-04-09T23:00:00.000+02:00', 'level': 'CHEAP'}
+2024-04-08 19:36:35,714 {'viewer': {'home': {'currentSubscription': {'priceInfo': {'current': {'energy': 0.6689, 'tax': 0.2488, 'total': 0.9177, 'startsAt': '2024-04-08T19:00:00.000+02:00', 'level': 'EXPENSIVE'}, 'today': [{'total': 0.7006, 'startsAt': '2024-04-08T00:00:00.000+02:00', 'level': 'NORMAL'}, {'total': 0.6742, 'startsAt': '2024-04-08T01:00:00.000+02:00', 'level': 'CHEAP'}, {'total': 0.668, 'startsAt': '2024-04-08T02:00:00.000+02:00', 'level': 'CHEAP'}, {'total': 0.7086, 'startsAt': '2024-04-08T03:00:00.000+02:00', 'level': 'NORMAL'}, {'total': 0.7362, 'startsAt': '2024-04-08T04:00:00.000+02:00', 'level': 'NORMAL'}, {'total': 0.7534, 'startsAt': '2024-04-08T05:00:00.000+02:00', 'level': 'NORMAL'}, {'total': 0.7947, 'startsAt': '2024-04-08T06:00:00.000+02:00', 'level': 'NORMAL'}, {'total': 0.8322, 'startsAt': '2024-04-08T07:00:00.000+02:00', 'level': 'NORMAL'}, {'total': 0.8774, 'startsAt': '2024-04-08T08:00:00.000+02:00', 'level': 'EXPENSIVE'}, {'total': 0.8595, 'startsAt': '2024-04-08T09:00:00.000+02:00', 'level': 'NORMAL'}, {'total': 0.8444, 'startsAt': '2024-04-08T10:00:00.000+02:00', 'level': 'NORMAL'}, {'total': 0.8379, 'startsAt': '2024-04-08T11:00:00.000+02:00', 'level': 'NORMAL'}, {'total': 0.8334, 'startsAt': '2024-04-08T12:00:00.000+02:00', 'level': 'NORMAL'}, {'total': 0.8334, 'startsAt': '2024-04-08T13:00:00.000+02:00', 'level': 'NORMAL'}, {'total': 0.8334, 'startsAt': '2024-04-08T14:00:00.000+02:00', 'level': 'NORMAL'}, {'total': 0.8306, 'startsAt': '2024-04-08T15:00:00.000+02:00', 'level': 'NORMAL'}, {'total': 0.8334, 'startsAt': '2024-04-08T16:00:00.000+02:00', 'level': 'NORMAL'}, {'total': 0.853, 'startsAt': '2024-04-08T17:00:00.000+02:00', 'level': 'NORMAL'}, {'total': 0.864, 'startsAt': '2024-04-08T18:00:00.000+02:00', 'level': 'NORMAL'}, {'total': 0.9177, 'startsAt': '2024-04-08T19:00:00.000+02:00', 'level': 'EXPENSIVE'}, {'total': 0.9295, 'startsAt': '2024-04-08T20:00:00.000+02:00', 'level': 'EXPENSIVE'}, {'total': 0.8767, 'startsAt': '2024-04-08T21:00:00.000+02:00', 'level': 'EXPENSIVE'}, {'total': 0.8566, 'startsAt': '2024-04-08T22:00:00.000+02:00', 'level': 'NORMAL'}, {'total': 0.8412, 'startsAt': '2024-04-08T23:00:00.000+02:00', 'level': 'NORMAL'}], 'tomorrow': [{'total': 0.8153, 'startsAt': '2024-04-09T00:00:00.000+02:00', 'level': 'NORMAL'}, {'total': 0.8098, 'startsAt': '2024-04-09T01:00:00.000+02:00', 'level': 'NORMAL'}, {'total': 0.8053, 'startsAt': '2024-04-09T02:00:00.000+02:00', 'level': 'NORMAL'}, {'total': 0.7995, 'startsAt': '2024-04-09T03:00:00.000+02:00', 'level': 'NORMAL'}, {'total': 0.7966, 'startsAt': '2024-04-09T04:00:00.000+02:00', 'level': 'NORMAL'}, {'total': 0.8033, 'startsAt': '2024-04-09T05:00:00.000+02:00', 'level': 'NORMAL'}, {'total': 0.8835, 'startsAt': '2024-04-09T06:00:00.000+02:00', 'level': 'EXPENSIVE'}, {'total': 1.3263, 'startsAt': '2024-04-09T07:00:00.000+02:00', 'level': 'VERY_EXPENSIVE'}, {'total': 1.2015, 'startsAt': '2024-04-09T08:00:00.000+02:00', 'level': 'VERY_EXPENSIVE'}, {'total': 1.0344, 'startsAt': '2024-04-09T09:00:00.000+02:00', 'level': 'EXPENSIVE'}, {'total': 0.8128, 'startsAt': '2024-04-09T10:00:00.000+02:00', 'level': 'NORMAL'}, {'total': 0.7345, 'startsAt': '2024-04-09T11:00:00.000+02:00', 'level': 'NORMAL'}, {'total': 0.6678, 'startsAt': '2024-04-09T12:00:00.000+02:00', 'level': 'CHEAP'}, {'total': 0.6641, 'startsAt': '2024-04-09T13:00:00.000+02:00', 'level': 'CHEAP'}, {'total': 0.6619, 'startsAt': '2024-04-09T14:00:00.000+02:00', 'level': 'CHEAP'}, {'total': 0.6618, 'startsAt': '2024-04-09T15:00:00.000+02:00', 'level': 'CHEAP'}, {'total': 0.6581, 'startsAt': '2024-04-09T16:00:00.000+02:00', 'level': 'CHEAP'}, {'total': 0.7823, 'startsAt': '2024-04-09T17:00:00.000+02:00', 'level': 'NORMAL'}, {'total': 0.8146, 'startsAt': '2024-04-09T18:00:00.000+02:00', 'level': 'NORMAL'}, {'total': 0.7889, 'startsAt': '2024-04-09T19:00:00.000+02:00', 'level': 'NORMAL'}, {'total': 0.7962, 'startsAt': '2024-04-09T20:00:00.000+02:00', 'level': 'NORMAL'}, {'total': 0.7801, 'startsAt': '2024-04-09T21:00:00.000+02:00', 'level': 'NORMAL'}, {'total': 0.7404, 'startsAt': '2024-04-09T22:00:00.000+02:00', 'level': 'NORMAL'}, {'total': 0.6302, 'startsAt': '2024-04-09T23:00:00.000+02:00', 'level': 'CHEAP'}]}}}}}
+2024-04-08 19:36:35,715 Data returned from API.
+2024-04-08 19:36:35,715 Waiting for next daily price update in 22:23:24 (hh:mm:ss), at 2024-04-09 18:00:00
+2024-04-08 19:36:35,715 Price Level: EXPENSIVE, Starts At: 19:00, Total: 0.9177
+2024-04-08 19:36:35,716 Sent to micro:bit: EXPENSIVE,19:00,0.92
+
+2024-04-08 19:36:35,716 Next hourly update in 0:23:24, at 2024-04-08 20:00:00
+2024-04-08 20:00:00,102 Price Level: EXPENSIVE, Starts At: 20:00, Total: 0.9295
+2024-04-08 20:00:00,102 Sent to micro:bit: EXPENSIVE,20:00,0.93
+
+2024-04-08 20:00:00,103 Next hourly update in 0:59:59, at 2024-04-08 21:00:00
+2024-04-08 21:00:00,047 Price Level: EXPENSIVE, Starts At: 21:00, Total: 0.8767
+2024-04-08 21:00:00,048 Sent to micro:bit: EXPENSIVE,21:00,0.88
+
+2024-04-08 21:00:00,048 Next hourly update in 0:59:59, at 2024-04-08 22:00:00
+2024-04-08 22:00:00,079 Price Level: NORMAL, Starts At: 22:00, Total: 0.8566
+2024-04-08 22:00:00,080 Sent to micro:bit: NORMAL,22:00,0.86
+
+2024-04-08 22:00:00,080 Next hourly update in 0:59:59, at 2024-04-08 23:00:00
+2024-04-08 23:00:00,102 Price Level: NORMAL, Starts At: 23:00, Total: 0.8412
+2024-04-08 23:00:00,103 Sent to micro:bit: NORMAL,23:00,0.84
+
+2024-04-08 23:00:00,103 Next hourly update in 0:59:59, at 2024-04-09 00:00:00
+2024-04-09 00:00:00,101 Price Level: NORMAL, Starts At: 00:00, Total: 0.8153
+2024-04-09 00:00:00,102 Sent to micro:bit: NORMAL,00:00,0.82
+
+2024-04-09 00:00:00,103 Next hourly update in 0:59:59, at 2024-04-09 01:00:00
+2024-04-09 01:00:00,063 Price Level: NORMAL, Starts At: 01:00, Total: 0.8098
+2024-04-09 01:00:00,063 Sent to micro:bit: NORMAL,01:00,0.81
+
+2024-04-09 01:00:00,064 Next hourly update in 0:59:59, at 2024-04-09 02:00:00
+2024-04-09 02:00:00,101 Price Level: NORMAL, Starts At: 02:00, Total: 0.8053
+2024-04-09 02:00:00,102 Sent to micro:bit: NORMAL,02:00,0.81
+
+2024-04-09 02:00:00,103 Next hourly update in 0:59:59, at 2024-04-09 03:00:00
+2024-04-09 03:00:00,038 Price Level: NORMAL, Starts At: 03:00, Total: 0.7995
+2024-04-09 03:00:00,039 Sent to micro:bit: NORMAL,03:00,0.8
+
+2024-04-09 03:00:00,039 Next hourly update in 0:59:59, at 2024-04-09 04:00:00
+2024-04-09 04:00:00,102 Price Level: NORMAL, Starts At: 04:00, Total: 0.7966
+2024-04-09 04:00:00,103 Sent to micro:bit: NORMAL,04:00,0.8
+
+2024-04-09 04:00:00,103 Next hourly update in 0:59:59, at 2024-04-09 05:00:00
+2024-04-09 05:00:00,042 Price Level: NORMAL, Starts At: 05:00, Total: 0.8033
+2024-04-09 05:00:00,043 Sent to micro:bit: NORMAL,05:00,0.8
+
+2024-04-09 05:00:00,043 Next hourly update in 0:59:59, at 2024-04-09 06:00:00
+2024-04-09 06:00:00,032 Price Level: EXPENSIVE, Starts At: 06:00, Total: 0.8835
+2024-04-09 06:00:00,032 Sent to micro:bit: EXPENSIVE,06:00,0.88
+
+2024-04-09 06:00:00,033 Next hourly update in 0:59:59, at 2024-04-09 07:00:00
+2024-04-09 07:00:00,101 Price Level: VERY_EXPENSIVE, Starts At: 07:00, Total: 1.3263
+2024-04-09 07:00:00,102 Sent to micro:bit: VERY_EXPENSIVE,07:00,1.33
+
+2024-04-09 07:00:00,102 Next hourly update in 0:59:59, at 2024-04-09 08:00:00
+2024-04-09 08:00:00,102 Price Level: VERY_EXPENSIVE, Starts At: 08:00, Total: 1.2015
+2024-04-09 08:00:00,102 Sent to micro:bit: VERY_EXPENSIVE,08:00,1.2
+
+2024-04-09 08:00:00,103 Next hourly update in 0:59:59, at 2024-04-09 09:00:00
+2024-04-09 09:00:00,079 Price Level: EXPENSIVE, Starts At: 09:00, Total: 1.0344
+2024-04-09 09:00:00,079 Sent to micro:bit: EXPENSIVE,09:00,1.03
+
+2024-04-09 09:00:00,080 Next hourly update in 0:59:59, at 2024-04-09 10:00:00
+2024-04-09 10:00:00,066 Price Level: NORMAL, Starts At: 10:00, Total: 0.8128
+2024-04-09 10:00:00,067 Sent to micro:bit: NORMAL,10:00,0.81
+
+2024-04-09 10:00:00,067 Next hourly update in 0:59:59, at 2024-04-09 11:00:00
+2024-04-09 11:00:00,102 Price Level: NORMAL, Starts At: 11:00, Total: 0.7345
+2024-04-09 11:00:00,102 Sent to micro:bit: NORMAL,11:00,0.73
+
+2024-04-09 11:00:00,103 Next hourly update in 0:59:59, at 2024-04-09 12:00:00
+2024-04-09 12:00:00,101 Price Level: CHEAP, Starts At: 12:00, Total: 0.6678
+2024-04-09 12:00:00,102 Sent to micro:bit: CHEAP,12:00,0.67
+
+2024-04-09 12:00:00,102 Next hourly update in 0:59:59, at 2024-04-09 13:00:00
+2024-04-09 13:00:00,033 Price Level: CHEAP, Starts At: 13:00, Total: 0.6641
+2024-04-09 13:00:00,034 Sent to micro:bit: CHEAP,13:00,0.66
+
+2024-04-09 13:00:00,035 Next hourly update in 0:59:59, at 2024-04-09 14:00:00
+2024-04-09 14:00:00,045 Price Level: CHEAP, Starts At: 14:00, Total: 0.6619
+2024-04-09 14:00:00,046 Sent to micro:bit: CHEAP,14:00,0.66
+
+2024-04-09 14:00:00,046 Next hourly update in 0:59:59, at 2024-04-09 15:00:00
+2024-04-09 15:00:00,102 Price Level: CHEAP, Starts At: 15:00, Total: 0.6618
+2024-04-09 15:00:00,103 Sent to micro:bit: CHEAP,15:00,0.66
+
+2024-04-09 15:00:00,103 Next hourly update in 0:59:59, at 2024-04-09 16:00:00
+2024-04-09 16:00:00,101 Price Level: CHEAP, Starts At: 16:00, Total: 0.6581
+2024-04-09 16:00:00,102 Sent to micro:bit: CHEAP,16:00,0.66
+
+2024-04-09 16:00:00,103 Next hourly update in 0:59:59, at 2024-04-09 17:00:00
+2024-04-09 17:00:00,091 Price Level: NORMAL, Starts At: 17:00, Total: 0.7823
+2024-04-09 17:00:00,092 Sent to micro:bit: NORMAL,17:00,0.78
+
+2024-04-09 17:00:00,092 Next hourly update in 0:59:59, at 2024-04-09 18:00:00
+2024-04-09 18:00:00,101 Price Level: NORMAL, Starts At: 18:00, Total: 0.8146
+2024-04-09 18:00:00,102 Sent to micro:bit: NORMAL,18:00,0.81
+
+2024-04-09 18:00:00,103 Next hourly update in 0:59:59, at 2024-04-09 19:00:00
+2024-04-09 18:00:00,103 Waiting for next daily price update in 23:59:59 (hh:mm:ss), at 2024-04-10 18:00:00
+2024-04-09 19:00:00,063 Price Level: NORMAL, Starts At: 19:00, Total: 0.7889
+2024-04-09 19:00:00,063 Sent to micro:bit: NORMAL,19:00,0.79
+
+2024-04-09 19:00:00,064 Next hourly update in 0:59:59, at 2024-04-09 20:00:00
+2024-04-09 19:15:42,348 Unclosed client session
+client_session: <aiohttp.client.ClientSession object at 0x7f9600d990>

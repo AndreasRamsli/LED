@@ -17,7 +17,7 @@ import backoff
 logging.basicConfig(filename='tibber_microbit.log', level=logging.INFO, format='%(asctime)s %(message)s')
 
 class MicroBitCommunicator:
-    port = '/dev/cu.usbmodem11102' # /dev/ttyACM0
+    port = '/dev/ttyACM0' # /dev/cu.usbmodem11102 
     def __init__(self, port=port, baudrate=115200):
         self.port = port
         self.baudrate = baudrate
@@ -26,7 +26,7 @@ class MicroBitCommunicator:
     def connect(self):
         try:
             self.serial_conn = serial.Serial(self.port, self.baudrate)
-            logging.info("Connected to micro:bit on macOS")
+            logging.info("Connected to micro:bit on RPi")
         except Exception as e:
             logging.error(f"Failed to connect to micro:bit on {self.port}: {e}")
 
