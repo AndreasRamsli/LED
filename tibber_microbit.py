@@ -1,3 +1,5 @@
+import atexit
+import signal
 import asyncio
 from datetime import datetime, timedelta, timezone
 from tibber import Tibber, gql_queries
@@ -17,31 +19,38 @@ import backoff
 logging.basicConfig(filename='tibber_microbit.log', level=logging.INFO, format='%(asctime)s %(message)s')
 
 class MicroBitCommunicator:
-    port = '/dev/ttyACM0' # /dev/cu.usbmodem11102 
-    def __init__(self, port=port, baudrate=115200):
+    def __init__(self, port='/dev/ttyACM0', baudrate=115200):
         self.port = port
         self.baudrate = baudrate
         self.serial_conn = None
+        atexit.register(self.disconnect)  # Register disconnect to be called at exit
+        signal.signal(signal.SIGINT, self.handle_signal)  # Handle interrupt signal
+        signal.signal(signal.SIGTERM, self.handle_signal)  # Handle termination signal
 
     def connect(self):
         try:
             self.serial_conn = serial.Serial(self.port, self.baudrate)
-            logging.info("Connected to micro:bit on RPi")
+            logging.info("Connected to micro:bit")
         except Exception as e:
             logging.error(f"Failed to connect to micro:bit on {self.port}: {e}")
 
-    def send_to_microbit(self, message, startsAt, total):
-        full_message = f"{message},{startsAt},{round(total,2)}\n"
-        try:
-            self.serial_conn.write(full_message.encode('utf-8'))
-            logging.info(f"Sent to micro:bit: {full_message}")
-        except Exception as e:
-            logging.error(f"Failed to send to micro:bit: {e}")
-
     def disconnect(self):
-        if self.serial_conn:
-            self.serial_conn.close()
-            logging.info("Disconnected from micro:bit")
+        termination_message = "TERMINATE\n"
+        try:
+            if self.serial_conn:
+                self.serial_conn.write(termination_message.encode('utf-8'))
+                logging.info("Sent termination signal to micro:bit.")
+        except Exception as e:
+            logging.error(f"Failed to send termination signal to micro:bit: {e}")
+        finally:
+            if self.serial_conn:
+                self.serial_conn.close()
+                logging.info("Disconnected from micro:bit.")
+                
+    def handle_signal(self, signum, frame):
+        self.disconnect()
+        print('EXIT')
+        exit(0)  # Exit gracefully
 
 
 def send_update_to_microbit(cache, microbit_communicator):
