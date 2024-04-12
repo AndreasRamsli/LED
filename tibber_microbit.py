@@ -33,6 +33,15 @@ class MicroBitCommunicator:
             logging.info("Connected to micro:bit")
         except Exception as e:
             logging.error(f"Failed to connect to micro:bit on {self.port}: {e}")
+    
+    def send_to_microbit(self, message, startsAt, total):
+        full_message = f"{message},{startsAt},{round(total,2)}\n"
+        try:
+            if self.serial_conn:  
+                self.serial_conn.write(full_message.encode('utf-8')) 
+                logging.info(f"Sent to micro:bit: {full_message}")
+        except Exception as e:
+            logging.error(f"Failed to send to micro:bit: {e}")
 
     def disconnect(self):
         termination_message = "TERMINATE\n"
@@ -49,8 +58,7 @@ class MicroBitCommunicator:
                 
     def handle_signal(self, signum, frame):
         self.disconnect()
-        print('EXIT')
-        exit(0)  # Exit gracefully
+        exit(0)
 
 
 def send_update_to_microbit(cache, microbit_communicator):
