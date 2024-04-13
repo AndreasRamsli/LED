@@ -12,9 +12,7 @@ import backoff
 #TODO:
 
 #BUG:
-#Wrong price and price_level displayed on the microbit after longrun.
-#Debug the PriceCache class, find out why the total differs from the API-total. Maybe something wrong with the update_cache function.
-#the timestamps might be modified or categorized wrong. 
+#Find out why the cache is not updating properly even though the API was called
 
 logging.basicConfig(filename='tibber_microbit.log', level=logging.INFO, format='%(asctime)s %(message)s')
 
@@ -30,9 +28,9 @@ class MicroBitCommunicator:
     def connect(self):
         try:
             self.serial_conn = serial.Serial(self.port, self.baudrate)
-            logging.info("Connected to micro:bit")
+            logging.info(f"Successfully connected to micro:bit on {self.port}")
         except Exception as e:
-            logging.error(f"Failed to connect to micro:bit on {self.port}: {e}")
+            logging.error(f"Failed to connect to micro:bit on {self.port}: {e}", exc_info=True)
     
     def send_to_microbit(self, message, startsAt, total):
         full_message = f"{message},{startsAt},{round(total,2)}\n"
@@ -41,7 +39,7 @@ class MicroBitCommunicator:
                 self.serial_conn.write(full_message.encode('utf-8')) 
                 logging.info(f"Sent to micro:bit: {full_message}")
         except Exception as e:
-            logging.error(f"Failed to send to micro:bit: {e}")
+            logging.error(f"Failed to send to micro:bit: {e}", exc_info=True)
 
     def disconnect(self):
         termination_message = "TERMINATE\n"
@@ -50,13 +48,14 @@ class MicroBitCommunicator:
                 self.serial_conn.write(termination_message.encode('utf-8'))
                 logging.info("Sent termination signal to micro:bit.")
         except Exception as e:
-            logging.error(f"Failed to send termination signal to micro:bit: {e}")
+            logging.error(f"Failed to send termination signal to micro:bit: {e}", exc_info=True)
         finally:
             if self.serial_conn:
                 self.serial_conn.close()
                 logging.info("Disconnected from micro:bit.")
                 
     def handle_signal(self, signum, frame):
+        logging.info(f"Received signal: {signal.Signals(signum).name}")
         self.disconnect()
         exit(0)
 
@@ -72,7 +71,8 @@ class PriceCache:
         self.cache = {'today': {}, 'tomorrow': {}}
 
     def update_cache(self, price_info):
-        self.clear_old_prices()  # Ensure the cache is current before updating
+        logging.debug(f"Received price info for updating cache: {price_info}")
+        self.clear_old_prices()
 
         for period in ['today', 'tomorrow']:
             new_prices = price_info['viewer']['home']['currentSubscription']['priceInfo'][period]
@@ -123,47 +123,43 @@ class PriceCache:
                 logging.info(f"  Hour: {hour}, Price Info: {price_info}")
 
 
-
-
 async def daily_updates(tibber_connection, cache, home_id, microbit_communicator):
     await fetch_prices_daily(tibber_connection, cache, home_id, microbit_communicator)
     await hourly_update(cache, microbit_communicator)
 
 
 async def fetch_prices_daily(tibber_connection, cache, home_id, microbit_communicator):
-    initial_fetch_done = False
     while True:
         now = datetime.now(timezone.utc).astimezone()
-
-        if not initial_fetch_done:
-            await fetch_prices(tibber_connection, cache, home_id)
+        
+        data = await fetch_prices(tibber_connection, home_id)
+        if data:
+            cache.update_cache(data)
             asyncio.create_task(hourly_update(cache, microbit_communicator))
-            initial_fetch_done = True
-
+        else:
+            logging.info("Waiting for the next scheduled fetch due to failed data retrieval.")
+        
+        # Check and fetch tomorrow's prices if not already fetched
         if '0' not in cache.cache['tomorrow']:
             await attempt_fetch_tomorrow_prices(tibber_connection, cache, home_id, now, microbit_communicator)
-    
+        
+        # Schedule the next daily fetch for around 24 hours later
         await schedule_next_daily_fetch(now)
 
 
-
 @backoff.on_exception(backoff.expo, Exception, max_tries=5)
-async def fetch_prices(tibber_connection, cache, home_id):
+async def fetch_prices(tibber_connection, home_id):
+    query = gql_queries.PRICE_INFO % home_id
     try:
-        query = gql_queries.PRICE_INFO % home_id
         data = await tibber_connection.execute(query)
         if data:
-            cache.update_cache(data)
-            logging.info(data)
-            logging.info("Data returned from API.")
-            return True
+            logging.debug(f"Raw data returned from API: {data}")
+            return data  # Return the full data for external validation
         else:
             logging.info("No data returned from the API.")
-            return False
     except Exception as e:
-        logging.error(f"Error fetching prices: {e}")
-        raise  # Reraising the exception to trigger the retry mechanism
-
+        logging.error(f"Error fetching prices: {e}", exc_info=True)
+    return None  # Return None if no data or an error occurred
 
 
 async def hourly_update(cache, microbit_communicator):
@@ -178,35 +174,44 @@ async def hourly_update(cache, microbit_communicator):
         await asyncio.sleep(wait_seconds)
 
             
+async def attempt_fetch_tomorrow_prices(tibber_connection, cache, home_id):
+    now = datetime.now(timezone.utc).astimezone()
+    wait_time = ((18 - now.hour) * 3600 - now.minute * 60 - now.second) if now.hour < 18 else 0
+    await asyncio.sleep(wait_time)
 
-async def attempt_fetch_tomorrow_prices(tibber_connection, cache, home_id, now, microbit_communicator):
-    first_attempt_time = now.replace(hour=18, minute=0, second=0, microsecond=0) if now.hour < 18 else now
-    
-    wait_seconds_until_first_attempt = max((first_attempt_time - now).total_seconds(), 0)
-    if wait_seconds_until_first_attempt > 0:
-        logging.info(f"Waiting until 18:00 for the first attempt to fetch tomorrow's data in {str(timedelta(seconds=int(wait_seconds_until_first_attempt)))} (hh:mm:ss), at {first_attempt_time.strftime('%Y-%m-%d %H:%M:%S')}")
-        await asyncio.sleep(wait_seconds_until_first_attempt)
-    
-    while '0' not in cache.cache['tomorrow']:
-        data_fetched = await fetch_prices(tibber_connection, cache, home_id)
+    retry_count = 0
+    max_retries = 10
+    retry_interval = 1800
+
+    while retry_count < max_retries:
+        data_fetched = await fetch_prices(tibber_connection, home_id)
         if data_fetched:
-            send_update_to_microbit(cache, microbit_communicator)
-        await asyncio.sleep(3600)
+            tomorrow_data = data_fetched.get('viewer', {}).get('home', {}).get('currentSubscription', {}).get('priceInfo', {}).get('tomorrow', [])
+            if all('total' in entry for entry in tomorrow_data):
+                logging.info("Successfully fetched complete tomorrow's prices.")
+                cache.update_cache(data_fetched)
+                break
+            else:
+                logging.info("Incomplete data for tomorrow, retrying...")
+        else:
+            logging.info("Failed to fetch any data, retrying...")
+        
+        retry_count += 1
+        await asyncio.sleep(retry_interval)
 
-    await schedule_next_daily_fetch(now)
-
+    if retry_count >= max_retries:
+        logging.error("Failed to fetch complete data for tomorrow after maximum retries.")
 
 
 async def schedule_next_daily_fetch(now):
-    # Schedule next fetch for 18:00 the next day
     next_fetch_time = (now + timedelta(days=1)).replace(hour=18, minute=0, second=0, microsecond=0)
     wait_seconds = (next_fetch_time - now).total_seconds()
     logging.info(f"Waiting for next daily price update in {str(timedelta(seconds=int(wait_seconds)))} (hh:mm:ss), at {next_fetch_time.strftime('%Y-%m-%d %H:%M:%S')}")
     await asyncio.sleep(wait_seconds)
 
 
-
 async def main():
+    logging.info("Starting main application process")
     TOKEN = "U4L8yS_OHsfgKndAhNQZ8K-JYElbNUagYvToCF3ZPVE"
     USER_AGENT = "LED_client"
     HOME_ID = "975996b6-e7ca-4fbf-9f72-61e2df95bc0c"
