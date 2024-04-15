@@ -3955,3 +3955,411 @@ serial.serialutil.PortNotOpenError: Attempting to use a port that is not open
 2024-04-13 15:55:21,770 Disconnected from micro:bit.
 2024-04-13 15:55:21,781 Unclosed client session
 client_session: <aiohttp.client.ClientSession object at 0x10313dd90>
+2024-04-13 15:59:18,214 Starting main application process
+2024-04-13 15:59:18,561 Successfully connected to micro:bit on /dev/ttyACM0
+2024-04-13 15:59:18,653 Updating cache with new today prices.
+2024-04-13 15:59:18,655 Updating cache with new tomorrow prices.
+2024-04-13 15:59:18,656 Current Cache State:
+2024-04-13 15:59:18,656 today:
+2024-04-13 15:59:18,656   Hour: 0, Price Info: {'total': 0.5759, 'startsAt': '2024-04-13T00:00:00.000+02:00', 'level': 'CHEAP'}
+2024-04-13 15:59:18,656   Hour: 1, Price Info: {'total': 0.4568, 'startsAt': '2024-04-13T01:00:00.000+02:00', 'level': 'CHEAP'}
+2024-04-13 15:59:18,656   Hour: 2, Price Info: {'total': 0.3618, 'startsAt': '2024-04-13T02:00:00.000+02:00', 'level': 'VERY_CHEAP'}
+2024-04-13 15:59:18,657   Hour: 3, Price Info: {'total': 0.3892, 'startsAt': '2024-04-13T03:00:00.000+02:00', 'level': 'VERY_CHEAP'}
+2024-04-13 15:59:18,657   Hour: 4, Price Info: {'total': 0.4087, 'startsAt': '2024-04-13T04:00:00.000+02:00', 'level': 'CHEAP'}
+2024-04-13 15:59:18,657   Hour: 5, Price Info: {'total': 0.419, 'startsAt': '2024-04-13T05:00:00.000+02:00', 'level': 'CHEAP'}
+2024-04-13 15:59:18,657   Hour: 6, Price Info: {'total': 0.4844, 'startsAt': '2024-04-13T06:00:00.000+02:00', 'level': 'CHEAP'}
+2024-04-13 15:59:18,657   Hour: 7, Price Info: {'total': 0.4024, 'startsAt': '2024-04-13T07:00:00.000+02:00', 'level': 'CHEAP'}
+2024-04-13 15:59:18,657   Hour: 8, Price Info: {'total': 0.4069, 'startsAt': '2024-04-13T08:00:00.000+02:00', 'level': 'CHEAP'}
+2024-04-13 15:59:18,657   Hour: 9, Price Info: {'total': 0.4064, 'startsAt': '2024-04-13T09:00:00.000+02:00', 'level': 'CHEAP'}
+2024-04-13 15:59:18,657   Hour: 10, Price Info: {'total': 0.4061, 'startsAt': '2024-04-13T10:00:00.000+02:00', 'level': 'CHEAP'}
+2024-04-13 15:59:18,657   Hour: 11, Price Info: {'total': 0.3042, 'startsAt': '2024-04-13T11:00:00.000+02:00', 'level': 'VERY_CHEAP'}
+2024-04-13 15:59:18,657   Hour: 12, Price Info: {'total': 0.2705, 'startsAt': '2024-04-13T12:00:00.000+02:00', 'level': 'VERY_CHEAP'}
+2024-04-13 15:59:18,657   Hour: 13, Price Info: {'total': 0.2353, 'startsAt': '2024-04-13T13:00:00.000+02:00', 'level': 'VERY_CHEAP'}
+2024-04-13 15:59:18,657   Hour: 14, Price Info: {'total': 0.1527, 'startsAt': '2024-04-13T14:00:00.000+02:00', 'level': 'VERY_CHEAP'}
+2024-04-13 15:59:18,658   Hour: 15, Price Info: {'total': 0.1511, 'startsAt': '2024-04-13T15:00:00.000+02:00', 'level': 'VERY_CHEAP'}
+2024-04-13 15:59:18,658   Hour: 16, Price Info: {'total': 0.2272, 'startsAt': '2024-04-13T16:00:00.000+02:00', 'level': 'VERY_CHEAP'}
+2024-04-13 15:59:18,658   Hour: 17, Price Info: {'total': 0.2624, 'startsAt': '2024-04-13T17:00:00.000+02:00', 'level': 'VERY_CHEAP'}
+2024-04-13 15:59:18,658   Hour: 18, Price Info: {'total': 0.4103, 'startsAt': '2024-04-13T18:00:00.000+02:00', 'level': 'CHEAP'}
+2024-04-13 15:59:18,658   Hour: 19, Price Info: {'total': 0.5989, 'startsAt': '2024-04-13T19:00:00.000+02:00', 'level': 'NORMAL'}
+2024-04-13 15:59:18,658   Hour: 20, Price Info: {'total': 0.6218, 'startsAt': '2024-04-13T20:00:00.000+02:00', 'level': 'NORMAL'}
+2024-04-13 15:59:18,658   Hour: 21, Price Info: {'total': 0.5832, 'startsAt': '2024-04-13T21:00:00.000+02:00', 'level': 'NORMAL'}
+2024-04-13 15:59:18,658   Hour: 22, Price Info: {'total': 0.4074, 'startsAt': '2024-04-13T22:00:00.000+02:00', 'level': 'CHEAP'}
+2024-04-13 15:59:18,658   Hour: 23, Price Info: {'total': 0.4236, 'startsAt': '2024-04-13T23:00:00.000+02:00', 'level': 'CHEAP'}
+2024-04-13 15:59:18,658 tomorrow:
+2024-04-13 15:59:18,658   Hour: 0, Price Info: {'total': 0.2711, 'startsAt': '2024-04-14T00:00:00.000+02:00', 'level': 'VERY_CHEAP'}
+2024-04-13 15:59:18,659   Hour: 1, Price Info: {'total': 0.3994, 'startsAt': '2024-04-14T01:00:00.000+02:00', 'level': 'CHEAP'}
+2024-04-13 15:59:18,659   Hour: 2, Price Info: {'total': 0.4098, 'startsAt': '2024-04-14T02:00:00.000+02:00', 'level': 'CHEAP'}
+2024-04-13 15:59:18,659   Hour: 3, Price Info: {'total': 0.4123, 'startsAt': '2024-04-14T03:00:00.000+02:00', 'level': 'CHEAP'}
+2024-04-13 15:59:18,659   Hour: 4, Price Info: {'total': 0.4203, 'startsAt': '2024-04-14T04:00:00.000+02:00', 'level': 'CHEAP'}
+2024-04-13 15:59:18,659   Hour: 5, Price Info: {'total': 0.3892, 'startsAt': '2024-04-14T05:00:00.000+02:00', 'level': 'CHEAP'}
+2024-04-13 15:59:18,659   Hour: 6, Price Info: {'total': 0.4249, 'startsAt': '2024-04-14T06:00:00.000+02:00', 'level': 'CHEAP'}
+2024-04-13 15:59:18,659   Hour: 7, Price Info: {'total': 0.3891, 'startsAt': '2024-04-14T07:00:00.000+02:00', 'level': 'CHEAP'}
+2024-04-13 15:59:18,659   Hour: 8, Price Info: {'total': 0.3866, 'startsAt': '2024-04-14T08:00:00.000+02:00', 'level': 'CHEAP'}
+2024-04-13 15:59:18,659   Hour: 9, Price Info: {'total': 0.4431, 'startsAt': '2024-04-14T09:00:00.000+02:00', 'level': 'CHEAP'}
+2024-04-13 15:59:18,659   Hour: 10, Price Info: {'total': 0.447, 'startsAt': '2024-04-14T10:00:00.000+02:00', 'level': 'CHEAP'}
+2024-04-13 15:59:18,659   Hour: 11, Price Info: {'total': 0.418, 'startsAt': '2024-04-14T11:00:00.000+02:00', 'level': 'CHEAP'}
+2024-04-13 15:59:18,659   Hour: 12, Price Info: {'total': 0.4175, 'startsAt': '2024-04-14T12:00:00.000+02:00', 'level': 'CHEAP'}
+2024-04-13 15:59:18,660   Hour: 13, Price Info: {'total': 0.4271, 'startsAt': '2024-04-14T13:00:00.000+02:00', 'level': 'CHEAP'}
+2024-04-13 15:59:18,660   Hour: 14, Price Info: {'total': 0.445, 'startsAt': '2024-04-14T14:00:00.000+02:00', 'level': 'CHEAP'}
+2024-04-13 15:59:18,660   Hour: 15, Price Info: {'total': 0.4567, 'startsAt': '2024-04-14T15:00:00.000+02:00', 'level': 'CHEAP'}
+2024-04-13 15:59:18,660   Hour: 16, Price Info: {'total': 0.4522, 'startsAt': '2024-04-14T16:00:00.000+02:00', 'level': 'CHEAP'}
+2024-04-13 15:59:18,660   Hour: 17, Price Info: {'total': 0.6286, 'startsAt': '2024-04-14T17:00:00.000+02:00', 'level': 'EXPENSIVE'}
+2024-04-13 15:59:18,660   Hour: 18, Price Info: {'total': 0.6952, 'startsAt': '2024-04-14T18:00:00.000+02:00', 'level': 'EXPENSIVE'}
+2024-04-13 15:59:18,660   Hour: 19, Price Info: {'total': 0.735, 'startsAt': '2024-04-14T19:00:00.000+02:00', 'level': 'VERY_EXPENSIVE'}
+2024-04-13 15:59:18,660   Hour: 20, Price Info: {'total': 0.7695, 'startsAt': '2024-04-14T20:00:00.000+02:00', 'level': 'VERY_EXPENSIVE'}
+2024-04-13 15:59:18,660   Hour: 21, Price Info: {'total': 0.8057, 'startsAt': '2024-04-14T21:00:00.000+02:00', 'level': 'VERY_EXPENSIVE'}
+2024-04-13 15:59:18,660   Hour: 22, Price Info: {'total': 0.803, 'startsAt': '2024-04-14T22:00:00.000+02:00', 'level': 'VERY_EXPENSIVE'}
+2024-04-13 15:59:18,660   Hour: 23, Price Info: {'total': 0.7746, 'startsAt': '2024-04-14T23:00:00.000+02:00', 'level': 'VERY_EXPENSIVE'}
+2024-04-13 15:59:18,661 Waiting for next daily price update in 1 day, 2:00:41 (hh:mm:ss), at 2024-04-14 18:00:00
+2024-04-13 15:59:18,661 Price Level: VERY_CHEAP, Starts At: 15:00, Total: 0.1511
+2024-04-13 15:59:18,661 Sent to micro:bit: VERY_CHEAP,15:00,0.15
+
+2024-04-13 15:59:18,661 Next hourly update in 0:00:41, at 2024-04-13 16:00:00
+2024-04-13 16:00:00,028 Price Level: VERY_CHEAP, Starts At: 16:00, Total: 0.2272
+2024-04-13 16:00:00,028 Sent to micro:bit: VERY_CHEAP,16:00,0.23
+
+2024-04-13 16:00:00,029 Next hourly update in 0:59:59, at 2024-04-13 17:00:00
+2024-04-13 17:00:00,091 Price Level: VERY_CHEAP, Starts At: 17:00, Total: 0.2624
+2024-04-13 17:00:00,091 Sent to micro:bit: VERY_CHEAP,17:00,0.26
+
+2024-04-13 17:00:00,092 Next hourly update in 0:59:59, at 2024-04-13 18:00:00
+2024-04-13 18:00:00,052 Price Level: CHEAP, Starts At: 18:00, Total: 0.4103
+2024-04-13 18:00:00,053 Sent to micro:bit: CHEAP,18:00,0.41
+
+2024-04-13 18:00:00,053 Next hourly update in 0:59:59, at 2024-04-13 19:00:00
+2024-04-13 19:00:00,052 Price Level: NORMAL, Starts At: 19:00, Total: 0.5989
+2024-04-13 19:00:00,053 Sent to micro:bit: NORMAL,19:00,0.6
+
+2024-04-13 19:00:00,053 Next hourly update in 0:59:59, at 2024-04-13 20:00:00
+2024-04-13 20:00:00,052 Price Level: NORMAL, Starts At: 20:00, Total: 0.6218
+2024-04-13 20:00:00,052 Sent to micro:bit: NORMAL,20:00,0.62
+
+2024-04-13 20:00:00,053 Next hourly update in 0:59:59, at 2024-04-13 21:00:00
+2024-04-13 21:00:00,052 Price Level: NORMAL, Starts At: 21:00, Total: 0.5832
+2024-04-13 21:00:00,052 Sent to micro:bit: NORMAL,21:00,0.58
+
+2024-04-13 21:00:00,053 Next hourly update in 0:59:59, at 2024-04-13 22:00:00
+2024-04-13 22:00:00,101 Price Level: CHEAP, Starts At: 22:00, Total: 0.4074
+2024-04-13 22:00:00,102 Sent to micro:bit: CHEAP,22:00,0.41
+
+2024-04-13 22:00:00,103 Next hourly update in 0:59:59, at 2024-04-13 23:00:00
+2024-04-13 23:00:00,102 Price Level: CHEAP, Starts At: 23:00, Total: 0.4236
+2024-04-13 23:00:00,103 Sent to micro:bit: CHEAP,23:00,0.42
+
+2024-04-13 23:00:00,103 Next hourly update in 0:59:59, at 2024-04-14 00:00:00
+2024-04-14 00:00:00,052 Price Level: VERY_CHEAP, Starts At: 00:00, Total: 0.2711
+2024-04-14 00:00:00,052 Sent to micro:bit: VERY_CHEAP,00:00,0.27
+
+2024-04-14 00:00:00,053 Next hourly update in 0:59:59, at 2024-04-14 01:00:00
+2024-04-14 01:00:00,101 Price Level: CHEAP, Starts At: 01:00, Total: 0.3994
+2024-04-14 01:00:00,102 Sent to micro:bit: CHEAP,01:00,0.4
+
+2024-04-14 01:00:00,103 Next hourly update in 0:59:59, at 2024-04-14 02:00:00
+2024-04-14 02:00:00,052 Price Level: CHEAP, Starts At: 02:00, Total: 0.4098
+2024-04-14 02:00:00,053 Sent to micro:bit: CHEAP,02:00,0.41
+
+2024-04-14 02:00:00,053 Next hourly update in 0:59:59, at 2024-04-14 03:00:00
+2024-04-14 03:00:00,055 Price Level: CHEAP, Starts At: 03:00, Total: 0.4123
+2024-04-14 03:00:00,056 Sent to micro:bit: CHEAP,03:00,0.41
+
+2024-04-14 03:00:00,056 Next hourly update in 0:59:59, at 2024-04-14 04:00:00
+2024-04-14 04:00:00,051 Price Level: CHEAP, Starts At: 04:00, Total: 0.4203
+2024-04-14 04:00:00,052 Sent to micro:bit: CHEAP,04:00,0.42
+
+2024-04-14 04:00:00,053 Next hourly update in 0:59:59, at 2024-04-14 05:00:00
+2024-04-14 05:00:00,052 Price Level: CHEAP, Starts At: 05:00, Total: 0.3892
+2024-04-14 05:00:00,053 Sent to micro:bit: CHEAP,05:00,0.39
+
+2024-04-14 05:00:00,053 Next hourly update in 0:59:59, at 2024-04-14 06:00:00
+2024-04-14 06:00:00,052 Price Level: CHEAP, Starts At: 06:00, Total: 0.4249
+2024-04-14 06:00:00,053 Sent to micro:bit: CHEAP,06:00,0.42
+
+2024-04-14 06:00:00,053 Next hourly update in 0:59:59, at 2024-04-14 07:00:00
+2024-04-14 07:00:00,027 Price Level: CHEAP, Starts At: 07:00, Total: 0.3891
+2024-04-14 07:00:00,028 Sent to micro:bit: CHEAP,07:00,0.39
+
+2024-04-14 07:00:00,028 Next hourly update in 0:59:59, at 2024-04-14 08:00:00
+2024-04-14 08:00:00,091 Price Level: CHEAP, Starts At: 08:00, Total: 0.3866
+2024-04-14 08:00:00,091 Sent to micro:bit: CHEAP,08:00,0.39
+
+2024-04-14 08:00:00,092 Next hourly update in 0:59:59, at 2024-04-14 09:00:00
+2024-04-14 09:00:00,052 Price Level: CHEAP, Starts At: 09:00, Total: 0.4431
+2024-04-14 09:00:00,053 Sent to micro:bit: CHEAP,09:00,0.44
+
+2024-04-14 09:00:00,053 Next hourly update in 0:59:59, at 2024-04-14 10:00:00
+2024-04-14 10:00:00,052 Price Level: CHEAP, Starts At: 10:00, Total: 0.447
+2024-04-14 10:00:00,053 Sent to micro:bit: CHEAP,10:00,0.45
+
+2024-04-14 10:00:00,053 Next hourly update in 0:59:59, at 2024-04-14 11:00:00
+2024-04-14 11:00:00,102 Price Level: CHEAP, Starts At: 11:00, Total: 0.418
+2024-04-14 11:00:00,103 Sent to micro:bit: CHEAP,11:00,0.42
+
+2024-04-14 11:00:00,103 Next hourly update in 0:59:59, at 2024-04-14 12:00:00
+2024-04-14 12:00:00,091 Price Level: CHEAP, Starts At: 12:00, Total: 0.4175
+2024-04-14 12:00:00,091 Sent to micro:bit: CHEAP,12:00,0.42
+
+2024-04-14 12:00:00,092 Next hourly update in 0:59:59, at 2024-04-14 13:00:00
+2024-04-14 13:00:00,051 Price Level: CHEAP, Starts At: 13:00, Total: 0.4271
+2024-04-14 13:00:00,052 Sent to micro:bit: CHEAP,13:00,0.43
+
+2024-04-14 13:00:00,052 Next hourly update in 0:59:59, at 2024-04-14 14:00:00
+2024-04-14 14:00:00,023 Price Level: CHEAP, Starts At: 14:00, Total: 0.445
+2024-04-14 14:00:00,023 Sent to micro:bit: CHEAP,14:00,0.45
+
+2024-04-14 14:00:00,024 Next hourly update in 0:59:59, at 2024-04-14 15:00:00
+2024-04-14 15:00:00,027 Price Level: CHEAP, Starts At: 15:00, Total: 0.4567
+2024-04-14 15:00:00,027 Sent to micro:bit: CHEAP,15:00,0.46
+
+2024-04-14 15:00:00,028 Next hourly update in 0:59:59, at 2024-04-14 16:00:00
+2024-04-14 16:00:00,091 Price Level: CHEAP, Starts At: 16:00, Total: 0.4522
+2024-04-14 16:00:00,091 Sent to micro:bit: CHEAP,16:00,0.45
+
+2024-04-14 16:00:00,092 Next hourly update in 0:59:59, at 2024-04-14 17:00:00
+2024-04-14 17:00:00,101 Price Level: EXPENSIVE, Starts At: 17:00, Total: 0.6286
+2024-04-14 17:00:00,102 Sent to micro:bit: EXPENSIVE,17:00,0.63
+
+2024-04-14 17:00:00,103 Next hourly update in 0:59:59, at 2024-04-14 18:00:00
+2024-04-14 18:00:00,052 Price Level: EXPENSIVE, Starts At: 18:00, Total: 0.6952
+2024-04-14 18:00:00,052 Sent to micro:bit: EXPENSIVE,18:00,0.7
+
+2024-04-14 18:00:00,053 Next hourly update in 0:59:59, at 2024-04-14 19:00:00
+2024-04-14 18:00:02,513 Clearing outdated 'today' prices from the cache.
+2024-04-14 18:00:02,515 Updating cache with new today prices.
+2024-04-14 18:00:02,518 Updating cache with new tomorrow prices.
+2024-04-14 18:00:02,521 Current Cache State:
+2024-04-14 18:00:02,522 today:
+2024-04-14 18:00:02,522   Hour: 0, Price Info: {'total': 0.2711, 'startsAt': '2024-04-14T00:00:00.000+02:00', 'level': 'VERY_CHEAP'}
+2024-04-14 18:00:02,522   Hour: 1, Price Info: {'total': 0.3994, 'startsAt': '2024-04-14T01:00:00.000+02:00', 'level': 'CHEAP'}
+2024-04-14 18:00:02,522   Hour: 2, Price Info: {'total': 0.4098, 'startsAt': '2024-04-14T02:00:00.000+02:00', 'level': 'CHEAP'}
+2024-04-14 18:00:02,522   Hour: 3, Price Info: {'total': 0.4123, 'startsAt': '2024-04-14T03:00:00.000+02:00', 'level': 'CHEAP'}
+2024-04-14 18:00:02,523   Hour: 4, Price Info: {'total': 0.4203, 'startsAt': '2024-04-14T04:00:00.000+02:00', 'level': 'CHEAP'}
+2024-04-14 18:00:02,523   Hour: 5, Price Info: {'total': 0.3892, 'startsAt': '2024-04-14T05:00:00.000+02:00', 'level': 'CHEAP'}
+2024-04-14 18:00:02,523   Hour: 6, Price Info: {'total': 0.4249, 'startsAt': '2024-04-14T06:00:00.000+02:00', 'level': 'CHEAP'}
+2024-04-14 18:00:02,523   Hour: 7, Price Info: {'total': 0.3891, 'startsAt': '2024-04-14T07:00:00.000+02:00', 'level': 'CHEAP'}
+2024-04-14 18:00:02,523   Hour: 8, Price Info: {'total': 0.3866, 'startsAt': '2024-04-14T08:00:00.000+02:00', 'level': 'CHEAP'}
+2024-04-14 18:00:02,524   Hour: 9, Price Info: {'total': 0.4431, 'startsAt': '2024-04-14T09:00:00.000+02:00', 'level': 'CHEAP'}
+2024-04-14 18:00:02,524   Hour: 10, Price Info: {'total': 0.447, 'startsAt': '2024-04-14T10:00:00.000+02:00', 'level': 'CHEAP'}
+2024-04-14 18:00:02,524   Hour: 11, Price Info: {'total': 0.418, 'startsAt': '2024-04-14T11:00:00.000+02:00', 'level': 'CHEAP'}
+2024-04-14 18:00:02,524   Hour: 12, Price Info: {'total': 0.4175, 'startsAt': '2024-04-14T12:00:00.000+02:00', 'level': 'CHEAP'}
+2024-04-14 18:00:02,525   Hour: 13, Price Info: {'total': 0.4271, 'startsAt': '2024-04-14T13:00:00.000+02:00', 'level': 'CHEAP'}
+2024-04-14 18:00:02,525   Hour: 14, Price Info: {'total': 0.445, 'startsAt': '2024-04-14T14:00:00.000+02:00', 'level': 'CHEAP'}
+2024-04-14 18:00:02,525   Hour: 15, Price Info: {'total': 0.4567, 'startsAt': '2024-04-14T15:00:00.000+02:00', 'level': 'CHEAP'}
+2024-04-14 18:00:02,525   Hour: 16, Price Info: {'total': 0.4522, 'startsAt': '2024-04-14T16:00:00.000+02:00', 'level': 'CHEAP'}
+2024-04-14 18:00:02,525   Hour: 17, Price Info: {'total': 0.6286, 'startsAt': '2024-04-14T17:00:00.000+02:00', 'level': 'EXPENSIVE'}
+2024-04-14 18:00:02,526   Hour: 18, Price Info: {'total': 0.6952, 'startsAt': '2024-04-14T18:00:00.000+02:00', 'level': 'EXPENSIVE'}
+2024-04-14 18:00:02,526   Hour: 19, Price Info: {'total': 0.735, 'startsAt': '2024-04-14T19:00:00.000+02:00', 'level': 'VERY_EXPENSIVE'}
+2024-04-14 18:00:02,526   Hour: 20, Price Info: {'total': 0.7695, 'startsAt': '2024-04-14T20:00:00.000+02:00', 'level': 'VERY_EXPENSIVE'}
+2024-04-14 18:00:02,526   Hour: 21, Price Info: {'total': 0.8057, 'startsAt': '2024-04-14T21:00:00.000+02:00', 'level': 'VERY_EXPENSIVE'}
+2024-04-14 18:00:02,526   Hour: 22, Price Info: {'total': 0.803, 'startsAt': '2024-04-14T22:00:00.000+02:00', 'level': 'VERY_EXPENSIVE'}
+2024-04-14 18:00:02,527   Hour: 23, Price Info: {'total': 0.7746, 'startsAt': '2024-04-14T23:00:00.000+02:00', 'level': 'VERY_EXPENSIVE'}
+2024-04-14 18:00:02,527 tomorrow:
+2024-04-14 18:00:02,527   Hour: 0, Price Info: {'total': 0.7645, 'startsAt': '2024-04-15T00:00:00.000+02:00', 'level': 'VERY_EXPENSIVE'}
+2024-04-14 18:00:02,527   Hour: 1, Price Info: {'total': 0.7468, 'startsAt': '2024-04-15T01:00:00.000+02:00', 'level': 'VERY_EXPENSIVE'}
+2024-04-14 18:00:02,527   Hour: 2, Price Info: {'total': 0.7325, 'startsAt': '2024-04-15T02:00:00.000+02:00', 'level': 'VERY_EXPENSIVE'}
+2024-04-14 18:00:02,528   Hour: 3, Price Info: {'total': 0.7076, 'startsAt': '2024-04-15T03:00:00.000+02:00', 'level': 'EXPENSIVE'}
+2024-04-14 18:00:02,528   Hour: 4, Price Info: {'total': 0.6733, 'startsAt': '2024-04-15T04:00:00.000+02:00', 'level': 'EXPENSIVE'}
+2024-04-14 18:00:02,528   Hour: 5, Price Info: {'total': 0.6485, 'startsAt': '2024-04-15T05:00:00.000+02:00', 'level': 'EXPENSIVE'}
+2024-04-14 18:00:02,528   Hour: 6, Price Info: {'total': 0.6741, 'startsAt': '2024-04-15T06:00:00.000+02:00', 'level': 'EXPENSIVE'}
+2024-04-14 18:00:02,528   Hour: 7, Price Info: {'total': 0.7259, 'startsAt': '2024-04-15T07:00:00.000+02:00', 'level': 'VERY_EXPENSIVE'}
+2024-04-14 18:00:02,529   Hour: 8, Price Info: {'total': 0.7956, 'startsAt': '2024-04-15T08:00:00.000+02:00', 'level': 'VERY_EXPENSIVE'}
+2024-04-14 18:00:02,529   Hour: 9, Price Info: {'total': 0.8004, 'startsAt': '2024-04-15T09:00:00.000+02:00', 'level': 'VERY_EXPENSIVE'}
+2024-04-14 18:00:02,529   Hour: 10, Price Info: {'total': 0.8042, 'startsAt': '2024-04-15T10:00:00.000+02:00', 'level': 'VERY_EXPENSIVE'}
+2024-04-14 18:00:02,529   Hour: 11, Price Info: {'total': 0.7452, 'startsAt': '2024-04-15T11:00:00.000+02:00', 'level': 'VERY_EXPENSIVE'}
+2024-04-14 18:00:02,529   Hour: 12, Price Info: {'total': 0.7056, 'startsAt': '2024-04-15T12:00:00.000+02:00', 'level': 'EXPENSIVE'}
+2024-04-14 18:00:02,530   Hour: 13, Price Info: {'total': 0.6285, 'startsAt': '2024-04-15T13:00:00.000+02:00', 'level': 'EXPENSIVE'}
+2024-04-14 18:00:02,530   Hour: 14, Price Info: {'total': 0.6298, 'startsAt': '2024-04-15T14:00:00.000+02:00', 'level': 'EXPENSIVE'}
+2024-04-14 18:00:02,530   Hour: 15, Price Info: {'total': 0.6273, 'startsAt': '2024-04-15T15:00:00.000+02:00', 'level': 'EXPENSIVE'}
+2024-04-14 18:00:02,530   Hour: 16, Price Info: {'total': 0.6227, 'startsAt': '2024-04-15T16:00:00.000+02:00', 'level': 'EXPENSIVE'}
+2024-04-14 18:00:02,530   Hour: 17, Price Info: {'total': 0.709, 'startsAt': '2024-04-15T17:00:00.000+02:00', 'level': 'EXPENSIVE'}
+2024-04-14 18:00:02,531   Hour: 18, Price Info: {'total': 0.7257, 'startsAt': '2024-04-15T18:00:00.000+02:00', 'level': 'EXPENSIVE'}
+2024-04-14 18:00:02,531   Hour: 19, Price Info: {'total': 0.7624, 'startsAt': '2024-04-15T19:00:00.000+02:00', 'level': 'VERY_EXPENSIVE'}
+2024-04-14 18:00:02,531   Hour: 20, Price Info: {'total': 0.7806, 'startsAt': '2024-04-15T20:00:00.000+02:00', 'level': 'VERY_EXPENSIVE'}
+2024-04-14 18:00:02,531   Hour: 21, Price Info: {'total': 0.7679, 'startsAt': '2024-04-15T21:00:00.000+02:00', 'level': 'VERY_EXPENSIVE'}
+2024-04-14 18:00:02,531   Hour: 22, Price Info: {'total': 0.7359, 'startsAt': '2024-04-15T22:00:00.000+02:00', 'level': 'EXPENSIVE'}
+2024-04-14 18:00:02,532   Hour: 23, Price Info: {'total': 0.6566, 'startsAt': '2024-04-15T23:00:00.000+02:00', 'level': 'EXPENSIVE'}
+2024-04-14 18:00:02,532 Waiting for next daily price update in 23:59:59 (hh:mm:ss), at 2024-04-15 18:00:00
+2024-04-14 18:00:02,533 Price Level: EXPENSIVE, Starts At: 18:00, Total: 0.6952
+2024-04-14 18:00:02,534 Sent to micro:bit: EXPENSIVE,18:00,0.7
+
+2024-04-14 18:00:02,534 Next hourly update in 0:59:57, at 2024-04-14 19:00:00
+2024-04-14 19:00:00,052 Price Level: VERY_EXPENSIVE, Starts At: 19:00, Total: 0.735
+2024-04-14 19:00:00,053 Sent to micro:bit: VERY_EXPENSIVE,19:00,0.73
+
+2024-04-14 19:00:00,053 Next hourly update in 0:59:59, at 2024-04-14 20:00:00
+2024-04-14 19:00:00,054 Price Level: VERY_EXPENSIVE, Starts At: 19:00, Total: 0.735
+2024-04-14 19:00:00,055 Sent to micro:bit: VERY_EXPENSIVE,19:00,0.73
+
+2024-04-14 19:00:00,055 Next hourly update in 0:59:59, at 2024-04-14 20:00:00
+2024-04-14 20:00:00,101 Price Level: VERY_EXPENSIVE, Starts At: 20:00, Total: 0.7695
+2024-04-14 20:00:00,102 Sent to micro:bit: VERY_EXPENSIVE,20:00,0.77
+
+2024-04-14 20:00:00,103 Next hourly update in 0:59:59, at 2024-04-14 21:00:00
+2024-04-14 20:00:00,103 Price Level: VERY_EXPENSIVE, Starts At: 20:00, Total: 0.7695
+2024-04-14 20:00:00,104 Sent to micro:bit: VERY_EXPENSIVE,20:00,0.77
+
+2024-04-14 20:00:00,104 Next hourly update in 0:59:59, at 2024-04-14 21:00:00
+2024-04-14 21:00:00,102 Price Level: VERY_EXPENSIVE, Starts At: 21:00, Total: 0.8057
+2024-04-14 21:00:00,102 Sent to micro:bit: VERY_EXPENSIVE,21:00,0.81
+
+2024-04-14 21:00:00,103 Next hourly update in 0:59:59, at 2024-04-14 22:00:00
+2024-04-14 21:00:00,104 Price Level: VERY_EXPENSIVE, Starts At: 21:00, Total: 0.8057
+2024-04-14 21:00:00,104 Sent to micro:bit: VERY_EXPENSIVE,21:00,0.81
+
+2024-04-14 21:00:00,105 Next hourly update in 0:59:59, at 2024-04-14 22:00:00
+2024-04-14 22:00:00,052 Price Level: VERY_EXPENSIVE, Starts At: 22:00, Total: 0.803
+2024-04-14 22:00:00,053 Sent to micro:bit: VERY_EXPENSIVE,22:00,0.8
+
+2024-04-14 22:00:00,053 Next hourly update in 0:59:59, at 2024-04-14 23:00:00
+2024-04-14 22:00:00,054 Price Level: VERY_EXPENSIVE, Starts At: 22:00, Total: 0.803
+2024-04-14 22:00:00,055 Sent to micro:bit: VERY_EXPENSIVE,22:00,0.8
+
+2024-04-14 22:00:00,055 Next hourly update in 0:59:59, at 2024-04-14 23:00:00
+2024-04-14 23:00:00,045 Price Level: VERY_EXPENSIVE, Starts At: 23:00, Total: 0.7746
+2024-04-14 23:00:00,045 Sent to micro:bit: VERY_EXPENSIVE,23:00,0.77
+
+2024-04-14 23:00:00,046 Next hourly update in 0:59:59, at 2024-04-15 00:00:00
+2024-04-14 23:00:00,047 Price Level: VERY_EXPENSIVE, Starts At: 23:00, Total: 0.7746
+2024-04-14 23:00:00,047 Sent to micro:bit: VERY_EXPENSIVE,23:00,0.77
+
+2024-04-14 23:00:00,048 Next hourly update in 0:59:59, at 2024-04-15 00:00:00
+2024-04-15 00:00:00,052 Price Level: VERY_EXPENSIVE, Starts At: 00:00, Total: 0.7645
+2024-04-15 00:00:00,052 Sent to micro:bit: VERY_EXPENSIVE,00:00,0.76
+
+2024-04-15 00:00:00,053 Next hourly update in 0:59:59, at 2024-04-15 01:00:00
+2024-04-15 00:00:00,054 Price Level: VERY_EXPENSIVE, Starts At: 00:00, Total: 0.7645
+2024-04-15 00:00:00,054 Sent to micro:bit: VERY_EXPENSIVE,00:00,0.76
+
+2024-04-15 00:00:00,055 Next hourly update in 0:59:59, at 2024-04-15 01:00:00
+2024-04-15 01:00:00,045 Price Level: VERY_EXPENSIVE, Starts At: 01:00, Total: 0.7468
+2024-04-15 01:00:00,046 Sent to micro:bit: VERY_EXPENSIVE,01:00,0.75
+
+2024-04-15 01:00:00,046 Next hourly update in 0:59:59, at 2024-04-15 02:00:00
+2024-04-15 01:00:00,047 Price Level: VERY_EXPENSIVE, Starts At: 01:00, Total: 0.7468
+2024-04-15 01:00:00,047 Sent to micro:bit: VERY_EXPENSIVE,01:00,0.75
+
+2024-04-15 01:00:00,048 Next hourly update in 0:59:59, at 2024-04-15 02:00:00
+2024-04-15 02:00:00,101 Price Level: VERY_EXPENSIVE, Starts At: 02:00, Total: 0.7325
+2024-04-15 02:00:00,102 Sent to micro:bit: VERY_EXPENSIVE,02:00,0.73
+
+2024-04-15 02:00:00,102 Next hourly update in 0:59:59, at 2024-04-15 03:00:00
+2024-04-15 02:00:00,103 Price Level: VERY_EXPENSIVE, Starts At: 02:00, Total: 0.7325
+2024-04-15 02:00:00,104 Sent to micro:bit: VERY_EXPENSIVE,02:00,0.73
+
+2024-04-15 02:00:00,104 Next hourly update in 0:59:59, at 2024-04-15 03:00:00
+2024-04-15 03:00:00,052 Price Level: EXPENSIVE, Starts At: 03:00, Total: 0.7076
+2024-04-15 03:00:00,053 Sent to micro:bit: EXPENSIVE,03:00,0.71
+
+2024-04-15 03:00:00,053 Next hourly update in 0:59:59, at 2024-04-15 04:00:00
+2024-04-15 03:00:00,054 Price Level: EXPENSIVE, Starts At: 03:00, Total: 0.7076
+2024-04-15 03:00:00,055 Sent to micro:bit: EXPENSIVE,03:00,0.71
+
+2024-04-15 03:00:00,055 Next hourly update in 0:59:59, at 2024-04-15 04:00:00
+2024-04-15 04:00:00,052 Price Level: EXPENSIVE, Starts At: 04:00, Total: 0.6733
+2024-04-15 04:00:00,052 Sent to micro:bit: EXPENSIVE,04:00,0.67
+
+2024-04-15 04:00:00,053 Next hourly update in 0:59:59, at 2024-04-15 05:00:00
+2024-04-15 04:00:00,054 Price Level: EXPENSIVE, Starts At: 04:00, Total: 0.6733
+2024-04-15 04:00:00,054 Sent to micro:bit: EXPENSIVE,04:00,0.67
+
+2024-04-15 04:00:00,055 Next hourly update in 0:59:59, at 2024-04-15 05:00:00
+2024-04-15 05:00:00,052 Price Level: EXPENSIVE, Starts At: 05:00, Total: 0.6485
+2024-04-15 05:00:00,052 Sent to micro:bit: EXPENSIVE,05:00,0.65
+
+2024-04-15 05:00:00,053 Next hourly update in 0:59:59, at 2024-04-15 06:00:00
+2024-04-15 05:00:00,054 Price Level: EXPENSIVE, Starts At: 05:00, Total: 0.6485
+2024-04-15 05:00:00,054 Sent to micro:bit: EXPENSIVE,05:00,0.65
+
+2024-04-15 05:00:00,055 Next hourly update in 0:59:59, at 2024-04-15 06:00:00
+2024-04-15 06:00:00,052 Price Level: EXPENSIVE, Starts At: 06:00, Total: 0.6741
+2024-04-15 06:00:00,053 Sent to micro:bit: EXPENSIVE,06:00,0.67
+
+2024-04-15 06:00:00,053 Next hourly update in 0:59:59, at 2024-04-15 07:00:00
+2024-04-15 06:00:00,054 Price Level: EXPENSIVE, Starts At: 06:00, Total: 0.6741
+2024-04-15 06:00:00,054 Sent to micro:bit: EXPENSIVE,06:00,0.67
+
+2024-04-15 06:00:00,055 Next hourly update in 0:59:59, at 2024-04-15 07:00:00
+2024-04-15 07:00:00,045 Price Level: VERY_EXPENSIVE, Starts At: 07:00, Total: 0.7259
+2024-04-15 07:00:00,045 Sent to micro:bit: VERY_EXPENSIVE,07:00,0.73
+
+2024-04-15 07:00:00,046 Next hourly update in 0:59:59, at 2024-04-15 08:00:00
+2024-04-15 07:00:00,047 Price Level: VERY_EXPENSIVE, Starts At: 07:00, Total: 0.7259
+2024-04-15 07:00:00,047 Sent to micro:bit: VERY_EXPENSIVE,07:00,0.73
+
+2024-04-15 07:00:00,048 Next hourly update in 0:59:59, at 2024-04-15 08:00:00
+2024-04-15 08:00:00,051 Price Level: VERY_EXPENSIVE, Starts At: 08:00, Total: 0.7956
+2024-04-15 08:00:00,052 Sent to micro:bit: VERY_EXPENSIVE,08:00,0.8
+
+2024-04-15 08:00:00,052 Next hourly update in 0:59:59, at 2024-04-15 09:00:00
+2024-04-15 08:00:00,053 Price Level: VERY_EXPENSIVE, Starts At: 08:00, Total: 0.7956
+2024-04-15 08:00:00,054 Sent to micro:bit: VERY_EXPENSIVE,08:00,0.8
+
+2024-04-15 08:00:00,054 Next hourly update in 0:59:59, at 2024-04-15 09:00:00
+2024-04-15 09:00:00,052 Price Level: VERY_EXPENSIVE, Starts At: 09:00, Total: 0.8004
+2024-04-15 09:00:00,053 Sent to micro:bit: VERY_EXPENSIVE,09:00,0.8
+
+2024-04-15 09:00:00,053 Next hourly update in 0:59:59, at 2024-04-15 10:00:00
+2024-04-15 09:00:00,054 Price Level: VERY_EXPENSIVE, Starts At: 09:00, Total: 0.8004
+2024-04-15 09:00:00,054 Sent to micro:bit: VERY_EXPENSIVE,09:00,0.8
+
+2024-04-15 09:00:00,055 Next hourly update in 0:59:59, at 2024-04-15 10:00:00
+2024-04-15 10:00:00,101 Price Level: VERY_EXPENSIVE, Starts At: 10:00, Total: 0.8042
+2024-04-15 10:00:00,102 Sent to micro:bit: VERY_EXPENSIVE,10:00,0.8
+
+2024-04-15 10:00:00,102 Next hourly update in 0:59:59, at 2024-04-15 11:00:00
+2024-04-15 10:00:00,103 Price Level: VERY_EXPENSIVE, Starts At: 10:00, Total: 0.8042
+2024-04-15 10:00:00,103 Sent to micro:bit: VERY_EXPENSIVE,10:00,0.8
+
+2024-04-15 10:00:00,104 Next hourly update in 0:59:59, at 2024-04-15 11:00:00
+2024-04-15 11:00:00,101 Price Level: VERY_EXPENSIVE, Starts At: 11:00, Total: 0.7452
+2024-04-15 11:00:00,102 Sent to micro:bit: VERY_EXPENSIVE,11:00,0.75
+
+2024-04-15 11:00:00,102 Next hourly update in 0:59:59, at 2024-04-15 12:00:00
+2024-04-15 11:00:00,103 Price Level: VERY_EXPENSIVE, Starts At: 11:00, Total: 0.7452
+2024-04-15 11:00:00,104 Sent to micro:bit: VERY_EXPENSIVE,11:00,0.75
+
+2024-04-15 11:00:00,104 Next hourly update in 0:59:59, at 2024-04-15 12:00:00
+2024-04-15 12:00:00,052 Price Level: EXPENSIVE, Starts At: 12:00, Total: 0.7056
+2024-04-15 12:00:00,053 Sent to micro:bit: EXPENSIVE,12:00,0.71
+
+2024-04-15 12:00:00,053 Next hourly update in 0:59:59, at 2024-04-15 13:00:00
+2024-04-15 12:00:00,054 Price Level: EXPENSIVE, Starts At: 12:00, Total: 0.7056
+2024-04-15 12:00:00,054 Sent to micro:bit: EXPENSIVE,12:00,0.71
+
+2024-04-15 12:00:00,055 Next hourly update in 0:59:59, at 2024-04-15 13:00:00
+2024-04-15 13:00:00,045 Price Level: EXPENSIVE, Starts At: 13:00, Total: 0.6285
+2024-04-15 13:00:00,045 Sent to micro:bit: EXPENSIVE,13:00,0.63
+
+2024-04-15 13:00:00,046 Next hourly update in 0:59:59, at 2024-04-15 14:00:00
+2024-04-15 13:00:00,047 Price Level: EXPENSIVE, Starts At: 13:00, Total: 0.6285
+2024-04-15 13:00:00,047 Sent to micro:bit: EXPENSIVE,13:00,0.63
+
+2024-04-15 13:00:00,048 Next hourly update in 0:59:59, at 2024-04-15 14:00:00
+2024-04-15 14:00:00,051 Price Level: EXPENSIVE, Starts At: 14:00, Total: 0.6298
+2024-04-15 14:00:00,052 Sent to micro:bit: EXPENSIVE,14:00,0.63
+
+2024-04-15 14:00:00,053 Next hourly update in 0:59:59, at 2024-04-15 15:00:00
+2024-04-15 14:00:00,053 Price Level: EXPENSIVE, Starts At: 14:00, Total: 0.6298
+2024-04-15 14:00:00,054 Sent to micro:bit: EXPENSIVE,14:00,0.63
+
+2024-04-15 14:00:00,054 Next hourly update in 0:59:59, at 2024-04-15 15:00:00
+2024-04-15 15:00:00,052 Price Level: EXPENSIVE, Starts At: 15:00, Total: 0.6273
+2024-04-15 15:00:00,052 Sent to micro:bit: EXPENSIVE,15:00,0.63
+
+2024-04-15 15:00:00,053 Next hourly update in 0:59:59, at 2024-04-15 16:00:00
+2024-04-15 15:00:00,054 Price Level: EXPENSIVE, Starts At: 15:00, Total: 0.6273
+2024-04-15 15:00:00,054 Sent to micro:bit: EXPENSIVE,15:00,0.63
+
+2024-04-15 15:00:00,055 Next hourly update in 0:59:59, at 2024-04-15 16:00:00
+2024-04-15 15:54:23,505 Received signal: SIGINT
+2024-04-15 15:54:23,506 Sent termination signal to micro:bit.
+2024-04-15 15:54:23,514 Disconnected from micro:bit.
+2024-04-15 15:54:23,519 Failed to send termination signal to micro:bit: Attempting to use a port that is not open
+Traceback (most recent call last):
+  File "/home/andram/fun/LED/tibber_microbit.py", line 48, in disconnect
+    self.serial_conn.write(termination_message.encode('utf-8'))
+  File "/home/andram/fun/LED-env/lib/python3.11/site-packages/serial/serialposix.py", line 615, in write
+    raise PortNotOpenError()
+serial.serialutil.PortNotOpenError: Attempting to use a port that is not open
+2024-04-15 15:54:23,523 Disconnected from micro:bit.
+2024-04-15 15:54:23,594 Unclosed client session
+client_session: <aiohttp.client.ClientSession object at 0x7f8a678790>

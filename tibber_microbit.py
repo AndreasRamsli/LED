@@ -12,12 +12,12 @@ import backoff
 #TODO:
 
 #BUG:
-#Find out why the cache is not updating properly even though the API was called
+#price info logged twice after cache update
 
 logging.basicConfig(filename='tibber_microbit.log', level=logging.INFO, format='%(asctime)s %(message)s')
 
 class MicroBitCommunicator:
-    def __init__(self, port='/dev/cu.usbmodem11102', baudrate=115200): #/dev/ttyACM0
+    def __init__(self, port='/dev/ttyACM0', baudrate=115200): #/dev/cu.usbmodem11102
         self.port = port
         self.baudrate = baudrate
         self.serial_conn = None
